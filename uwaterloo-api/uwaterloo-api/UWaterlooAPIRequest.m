@@ -9,6 +9,16 @@
 #import "UWaterlooAPIRequest.h"
 
 @implementation UWaterlooAPIRequest
+{
+    NSString *apiKey;
+    NSURL *baseUrl;
+    
+    UWaterlooAPISuccessBlock requestSuccessBlock;
+    UWaterlooAPIFailureBlock requestFailureBlock;
+    
+    NSURLConnection *requestConnection;
+    NSMutableData *requestData;
+}
 
 -(id)initWithAPIKey:(NSString *)key andBaseURL:(NSURL *)url
 {

@@ -11,9 +11,6 @@
 #import "PreferencesModifier.h"
 
 @interface PreferencesWindowController : NSWindowController <NSToolbarDelegate>
-{
-    NSViewController<PreferencesModifier> *activePrefencesView;
-}
 
 @property (weak) IBOutlet NSToolbar *tabbar;
 @property (weak) IBOutlet NSToolbarItem *generalTab;

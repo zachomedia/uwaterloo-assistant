@@ -11,24 +11,53 @@
 #import "APIKey.h"
 
 @implementation AppDelegate
+{
+    UWaterlooAPI *api;
+    
+    Terms *terms;
+    Weather *weather;
+    
+    NSMenuItem *termMenuItem;
+    NSMenuItem *weatherMenuItem;
+    
+    NSTimer *shortRefreshTimer;
+    NSTimer *longRefreshTimer;
+    
+    PreferencesWindowController *preferencesWindowController;
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     Log(@"Creating Menu...");
     
+    // Hide the Dock icon
     [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
     
+    // Initalize the API
     api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY andDelegate:self];
     
-    [self requestAPIData];
+    // Setup update timers
+    shortRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:(30 * 60) target:self selector:@selector(shortRefreshTimerTick) userInfo:nil repeats:YES];
+    
+    longRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:(2 * 3600) target:self selector:@selector(longRefreshTimerTick) userInfo:nil repeats:YES];
+    
+    [shortRefreshTimer fire];
+    [longRefreshTimer fire];
+    
     [self createMenu];
-}
+}// End of applicationDidFinishLaunching
 
--(void)requestAPIData
+-(void)shortRefreshTimerTick
 {
-    [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:@selector(termsFailed:)];
+    Log(@"Short Refresh Timer Tick");
     [api weatherWithSuccessSelector:@selector(weatherReceived:) failureSelector:@selector(weatherFailed:)];
-}// End of requestAPIData
+}// End of shortRefreshTimerTick
+
+-(void)longRefreshTimerTick
+{
+    Log(@"Long Refresh Timer Tick");
+    [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:@selector(termsFailed:)];
+}// End of longRefreshTimerTick
 
 #pragma Data Received/Failed selectors
 
@@ -110,9 +139,7 @@
     [NSApp setActivationPolicy: NSApplicationActivationPolicyRegular];
     
     if (preferencesWindowController == nil)
-    {
         preferencesWindowController = [[PreferencesWindowController alloc] init];
-    }
     
     [NSApp activateIgnoringOtherApps:YES];
     [preferencesWindowController showWindow:self];
@@ -130,7 +157,7 @@
     }// End of if
     else
     {
-        termMenuItem.title = [NSString stringWithFormat:@"Current Term: %@", terms.currentTerm.name];
+        termMenuItem.title = [NSString stringWithFormat:@"Term: %@", terms.currentTerm.name];
     }// End of else
 }// End of updateTermMenuItem
 

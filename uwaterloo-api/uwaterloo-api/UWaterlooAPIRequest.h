@@ -15,16 +15,6 @@ typedef void (^UWaterlooAPIFailureBlock)(NSError *);
 // TODO: Check response code of API request.
 
 @interface UWaterlooAPIRequest : NSObject<NSURLConnectionDelegate, NSURLConnectionDataDelegate>
-{
-    NSString *apiKey;
-    NSURL *baseUrl;
-    
-    UWaterlooAPISuccessBlock requestSuccessBlock;
-    UWaterlooAPIFailureBlock requestFailureBlock;
-    
-    NSURLConnection *requestConnection;
-    NSMutableData *requestData;
-}
 
 -(id)initWithAPIKey:(NSString *)key andBaseURL:(NSURL *)url;
 

@@ -11,6 +11,11 @@
 #import "UWaterlooAPIRequest.h"
 
 @implementation UWaterlooAPI
+{
+    NSString *apiKey;
+    NSURL *baseUrl;
+    id delegate;
+}
 
 -(id)initWithAPIKey:(NSString *)key andDelegate:(id)del
 {

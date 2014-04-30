@@ -15,6 +15,9 @@
 @end
 
 @implementation PreferencesWindowController
+{
+    NSViewController<PreferencesModifier> *activePrefencesView;
+}
 
 -(id)init
 {

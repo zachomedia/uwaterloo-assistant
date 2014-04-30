@@ -12,17 +12,6 @@
 #import "PreferencesWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
-{
-    UWaterlooAPI *api;
-    
-    Terms *terms;
-    Weather *weather;
-    
-    NSMenuItem *termMenuItem;
-    NSMenuItem *weatherMenuItem;
-    
-    PreferencesWindowController *preferencesWindowController;
-}
 
 - (IBAction)showPreferences:(id)sender;
 

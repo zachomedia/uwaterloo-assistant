@@ -12,11 +12,6 @@
 #import "Weather.h"
 
 @interface UWaterlooAPI : NSObject
-{
-    NSString *apiKey;
-    NSURL *baseUrl;
-    id delegate;
-}
 
 -(id)initWithAPIKey:(NSString *)key andDelegate:(id)delegate;
 -(id)initWithAPIKey:(NSString *)key baseURL:(NSURL *)url andDelegate:(id)delegate;
