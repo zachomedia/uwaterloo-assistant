@@ -48,21 +48,21 @@
 /* Begin PBXFileReference section */
 		B6366B7F191152490034B196 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
-		B650BF421910BFF4004030F6 /* uwaterloo-assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uwaterloo-assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uWaterloo Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B650BF481910BFF4004030F6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B650BF491910BFF4004030F6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B650BF4A1910BFF4004030F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B650BF4D1910BFF4004030F6 /* uwaterloo-assistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uwaterloo-assistant-Info.plist"; sourceTree = "<group>"; };
+		B650BF4D1910BFF4004030F6 /* uWaterloo Assistant-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uWaterloo Assistant-Info.plist"; sourceTree = "<group>"; };
 		B650BF4F1910BFF4004030F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B650BF511910BFF4004030F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B650BF531910BFF4004030F6 /* uwaterloo-assistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uwaterloo-assistant-Prefix.pch"; sourceTree = "<group>"; };
+		B650BF531910BFF4004030F6 /* uWaterloo Assistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uWaterloo Assistant-Prefix.pch"; sourceTree = "<group>"; };
 		B650BF551910BFF4004030F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		B650BF5B1910BFF4004030F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B650BF5D1910BFF4004030F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B650BF631910BFF4004030F6 /* uwaterloo-assistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uwaterloo-assistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B650BF631910BFF4004030F6 /* uWaterloo AssistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uWaterloo AssistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF641910BFF4004030F6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B650BF6B1910BFF4004030F6 /* uwaterloo-assistantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uwaterloo-assistantTests-Info.plist"; sourceTree = "<group>"; };
+		B650BF6B1910BFF4004030F6 /* uWaterloo AssistantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uWaterloo AssistantTests-Info.plist"; sourceTree = "<group>"; };
 		B650BF6D1910BFF4004030F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B650BF6F1910BFF4004030F6 /* uwaterloo_assistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uwaterloo_assistantTests.m; sourceTree = "<group>"; };
 		B650BF791910C04D004030F6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		B650BF431910BFF4004030F6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B650BF421910BFF4004030F6 /* uwaterloo-assistant.app */,
-				B650BF631910BFF4004030F6 /* uwaterloo-assistantTests.xctest */,
+				B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */,
+				B650BF631910BFF4004030F6 /* uWaterloo AssistantTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,10 +156,10 @@
 		B650BF4C1910BFF4004030F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B650BF4D1910BFF4004030F6 /* uwaterloo-assistant-Info.plist */,
+				B650BF4D1910BFF4004030F6 /* uWaterloo Assistant-Info.plist */,
 				B650BF4E1910BFF4004030F6 /* InfoPlist.strings */,
 				B650BF511910BFF4004030F6 /* main.m */,
-				B650BF531910BFF4004030F6 /* uwaterloo-assistant-Prefix.pch */,
+				B650BF531910BFF4004030F6 /* uWaterloo Assistant-Prefix.pch */,
 				B650BF541910BFF4004030F6 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -177,7 +177,7 @@
 		B650BF6A1910BFF4004030F6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B650BF6B1910BFF4004030F6 /* uwaterloo-assistantTests-Info.plist */,
+				B650BF6B1910BFF4004030F6 /* uWaterloo AssistantTests-Info.plist */,
 				B650BF6C1910BFF4004030F6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -186,9 +186,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B650BF411910BFF4004030F6 /* uwaterloo-assistant */ = {
+		B650BF411910BFF4004030F6 /* uWaterloo Assistant */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B650BF731910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uwaterloo-assistant" */;
+			buildConfigurationList = B650BF731910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uWaterloo Assistant" */;
 			buildPhases = (
 				B650BF3E1910BFF4004030F6 /* Sources */,
 				B650BF3F1910BFF4004030F6 /* Frameworks */,
@@ -198,14 +198,14 @@
 			);
 			dependencies = (
 			);
-			name = "uwaterloo-assistant";
+			name = "uWaterloo Assistant";
 			productName = "uwaterloo-assistant";
-			productReference = B650BF421910BFF4004030F6 /* uwaterloo-assistant.app */;
+			productReference = B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B650BF621910BFF4004030F6 /* uwaterloo-assistantTests */ = {
+		B650BF621910BFF4004030F6 /* uWaterloo AssistantTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B650BF761910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uwaterloo-assistantTests" */;
+			buildConfigurationList = B650BF761910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uWaterloo AssistantTests" */;
 			buildPhases = (
 				B650BF5F1910BFF4004030F6 /* Sources */,
 				B650BF601910BFF4004030F6 /* Frameworks */,
@@ -216,9 +216,9 @@
 			dependencies = (
 				B650BF681910BFF4004030F6 /* PBXTargetDependency */,
 			);
-			name = "uwaterloo-assistantTests";
+			name = "uWaterloo AssistantTests";
 			productName = "uwaterloo-assistantTests";
-			productReference = B650BF631910BFF4004030F6 /* uwaterloo-assistantTests.xctest */;
+			productReference = B650BF631910BFF4004030F6 /* uWaterloo AssistantTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -254,8 +254,8 @@
 			);
 			projectRoot = "";
 			targets = (
-				B650BF411910BFF4004030F6 /* uwaterloo-assistant */,
-				B650BF621910BFF4004030F6 /* uwaterloo-assistantTests */,
+				B650BF411910BFF4004030F6 /* uWaterloo Assistant */,
+				B650BF621910BFF4004030F6 /* uWaterloo AssistantTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,7 +322,7 @@
 /* Begin PBXTargetDependency section */
 		B650BF681910BFF4004030F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B650BF411910BFF4004030F6 /* uwaterloo-assistant */;
+			target = B650BF411910BFF4004030F6 /* uWaterloo Assistant */;
 			targetProxy = B650BF671910BFF4004030F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -439,9 +439,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "uwaterloo-assistant/uwaterloo-assistant-Prefix.pch";
-				INFOPLIST_FILE = "uwaterloo-assistant/uwaterloo-assistant-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "uwaterloo-assistant/uWaterloo Assistant-Prefix.pch";
+				INFOPLIST_FILE = "uwaterloo-assistant/uWaterloo Assistant-Info.plist";
+				PRODUCT_NAME = "uWaterloo Assistant";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -452,9 +452,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "uwaterloo-assistant/uwaterloo-assistant-Prefix.pch";
-				INFOPLIST_FILE = "uwaterloo-assistant/uwaterloo-assistant-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "uwaterloo-assistant/uWaterloo Assistant-Prefix.pch";
+				INFOPLIST_FILE = "uwaterloo-assistant/uWaterloo Assistant-Info.plist";
+				PRODUCT_NAME = "uWaterloo Assistant";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -474,8 +474,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "uwaterloo-assistantTests/uwaterloo-assistantTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "uwaterloo-assistantTests/uWaterloo AssistantTests-Info.plist";
+				PRODUCT_NAME = "uWaterloo AssistantTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -492,8 +492,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uwaterloo-assistant/uwaterloo-assistant-Prefix.pch";
-				INFOPLIST_FILE = "uwaterloo-assistantTests/uwaterloo-assistantTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "uwaterloo-assistantTests/uWaterloo AssistantTests-Info.plist";
+				PRODUCT_NAME = "uWaterloo AssistantTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -511,7 +511,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B650BF731910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uwaterloo-assistant" */ = {
+		B650BF731910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uWaterloo Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B650BF741910BFF4004030F6 /* Debug */,
@@ -520,7 +520,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B650BF761910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uwaterloo-assistantTests" */ = {
+		B650BF761910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uWaterloo AssistantTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B650BF771910BFF4004030F6 /* Debug */,
