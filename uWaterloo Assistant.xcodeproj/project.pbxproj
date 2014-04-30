@@ -47,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		B60A12FD19116EA600AA4DC9 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
-		B6366B7F191152490034B196 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
 		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
 		B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uWaterloo Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -144,13 +143,12 @@
 		B650BF4B1910BFF4004030F6 /* uwaterloo-assistant */ = {
 			isa = PBXGroup;
 			children = (
-				B6366B7F191152490034B196 /* APIKey.h */,
+				B60A12FD19116EA600AA4DC9 /* APIKey.h */,
 				B650BF791910C04D004030F6 /* AppDelegate.h */,
 				B650BF7A1910C04D004030F6 /* AppDelegate.m */,
 				B650BF5A1910BFF4004030F6 /* MainMenu.xib */,
 				B650BF5D1910BFF4004030F6 /* Images.xcassets */,
 				B650BF4C1910BFF4004030F6 /* Supporting Files */,
-				B60A12FD19116EA600AA4DC9 /* APIKey.h */,
 			);
 			path = "uwaterloo-assistant";
 			sourceTree = "<group>";
