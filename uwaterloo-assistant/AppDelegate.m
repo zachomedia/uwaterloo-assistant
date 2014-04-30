@@ -16,6 +16,8 @@
 {
     Log(@"Creating Menu...");
     
+    [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
+    
     api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY andDelegate:self];
     
     [self requestAPIData];
@@ -42,6 +44,7 @@
 {
     Log("Terms Failed");
     
+    terms = nil;
     [self updateTermMenuItem];
 }// End of termsFailed
 
@@ -57,6 +60,7 @@
 {
     Log("Weather Failed");
     
+    weather = nil;
     [self updateWeatherMenuItem];
 }// End of weatherFailed
 
@@ -94,6 +98,10 @@
     [menu addItem:[NSMenuItem separatorItem]];
     
     [menu addItemWithTitle:@"Refresh Data" action:@selector(requestAPIData) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Preferences... (Coming Soon)" action:nil keyEquivalent:@""];
+    
+    [menu addItem:[NSMenuItem separatorItem]];
+    
     [menu addItemWithTitle:@"Quit uWaterloo Assistant" action:@selector(terminate:) keyEquivalent:@""];
 }// End of createMenu
 
