@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferencesWindowController">
             <connections>
+                <outlet property="aboutTab" destination="U48-9z-uJd" id="ves-zv-ETG"/>
                 <outlet property="coursesTab" destination="W84-ps-Jlb" id="BSz-XU-WW1"/>
                 <outlet property="generalTab" destination="WYH-Nk-ANx" id="Pb1-LJ-075"/>
                 <outlet property="tabbar" destination="qbc-GB-RUU" id="Mva-il-PEk"/>
@@ -37,10 +38,17 @@
                             <action selector="tabSelected:" target="-2" id="C7n-gE-b7X"/>
                         </connections>
                     </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="187FEE58-EF0B-40A8-812E-6ADED1B898BD" explicitItemIdentifier="aboutToolbarItem" label="About" paletteLabel="About" toolTip="About uWaterloo Assistant" tag="-1" image="NSInfo" selectable="YES" id="U48-9z-uJd">
+                        <connections>
+                            <action selector="tabSelected:" target="-2" id="Frl-tN-MAW"/>
+                        </connections>
+                    </toolbarItem>
                 </allowedToolbarItems>
                 <defaultToolbarItems>
                     <toolbarItem reference="WYH-Nk-ANx"/>
                     <toolbarItem reference="W84-ps-Jlb"/>
+                    <toolbarItem reference="0Ru-id-FNK"/>
+                    <toolbarItem reference="U48-9z-uJd"/>
                 </defaultToolbarItems>
             </toolbar>
             <connections>
@@ -49,6 +57,7 @@
         </window>
     </objects>
     <resources>
+        <image name="NSInfo" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
         <image name="NSUser" width="32" height="32"/>
     </resources>

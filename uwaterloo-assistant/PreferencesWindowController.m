@@ -9,6 +9,8 @@
 #import "PreferencesWindowController.h"
 
 #import "GeneralPreferencesViewController.h"
+#import "CoursesPreferencesViewController.h"
+#import "AboutViewController.h"
 
 @interface PreferencesWindowController ()
 
@@ -63,7 +65,13 @@
     {
         [self.window setTitle:@"Courses"];
         
-        activePrefencesView = [[GeneralPreferencesViewController alloc] initWithNibName:@"CoursesPreferencesView" bundle:nil];
+        activePrefencesView = [[CoursesPreferencesViewController alloc] initWithNibName:@"CoursesPreferencesView" bundle:nil];
+    }// End of else if
+    else if (tab == self.aboutTab)
+    {
+        [self.window setTitle:@"About"];
+        
+        activePrefencesView = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
     }// End of else if
     
     self.window.contentView = activePrefencesView.view;

@@ -15,6 +15,7 @@
 @property (weak) IBOutlet NSToolbar *tabbar;
 @property (weak) IBOutlet NSToolbarItem *generalTab;
 @property (weak) IBOutlet NSToolbarItem *coursesTab;
+@property (weak) IBOutlet NSToolbarItem *aboutTab;
 
 @property (weak) IBOutlet NSView *preferencesView;
 
