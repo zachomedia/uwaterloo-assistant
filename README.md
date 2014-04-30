@@ -14,7 +14,8 @@ All information displayed is provided by the University of Waterloo OpenData API
 ## Compiling and Running
 
 1. An API key is required: https://api.uwaterloo.ca/
-2. Place the API key in AppDelegate.m: `api = [[UWaterlooAPI alloc] initWithAPIKey:@"API_KEY" andDelegate:self];`
+2. Copy APIKey.h.dist to APIKey.h
+3. Place the API key in APIKey.h
 
 ## License
 
