@@ -51,7 +51,9 @@
     {
         statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         
-        statusItem.title = @"UW";
+        statusItem.title = @"";
+        statusItem.image = [NSImage imageNamed:@"MenuBarIcon"];
+        statusItem.alternateImage = [NSImage imageNamed:@"MenuBarIconSelected"];
         statusItem.highlightMode = YES;
         
         menu = [[NSMenu alloc] init];
