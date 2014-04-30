@@ -5,5 +5,13 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
+#import <Cocoa/Cocoa.h>
+#endif
+
+#ifdef DEBUG
+#define Log(format, ...) NSLog((@"%s:%d %s\n" format), __PRETTY_FUNCTION__, __LINE__, __FILE__, ##__VA_ARGS__);
+#elif TESTFLIGHT
+#define Log(format, ...) NSLog((@"%s() %s:%d\n" format), __PRETTY_FUNCTION__, __LINE__, __FILE__, ##__VA_ARGS__);
+#else
+#define Log(...)
 #endif

@@ -11,13 +11,18 @@
 		B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF4E1910BFF4004030F6 /* InfoPlist.strings */; };
 		B650BF521910BFF4004030F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF511910BFF4004030F6 /* main.m */; };
 		B650BF561910BFF4004030F6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B650BF541910BFF4004030F6 /* Credits.rtf */; };
-		B650BF591910BFF4004030F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF581910BFF4004030F6 /* AppDelegate.m */; };
 		B650BF5C1910BFF4004030F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B650BF5A1910BFF4004030F6 /* MainMenu.xib */; };
 		B650BF5E1910BFF4004030F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B650BF5D1910BFF4004030F6 /* Images.xcassets */; };
 		B650BF651910BFF4004030F6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF641910BFF4004030F6 /* XCTest.framework */; };
 		B650BF661910BFF4004030F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF451910BFF4004030F6 /* Cocoa.framework */; };
 		B650BF6E1910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF6C1910BFF4004030F6 /* InfoPlist.strings */; };
 		B650BF701910BFF4004030F6 /* uwaterloo_assistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF6F1910BFF4004030F6 /* uwaterloo_assistantTests.m */; };
+		B650BF861910C04D004030F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7A1910C04D004030F6 /* AppDelegate.m */; };
+		B650BF871910C04D004030F6 /* Term.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7C1910C04D004030F6 /* Term.m */; };
+		B650BF881910C04D004030F6 /* Terms.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7E1910C04D004030F6 /* Terms.m */; };
+		B650BF891910C04D004030F6 /* UWaterlooAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF811910C04D004030F6 /* UWaterlooAPI.m */; };
+		B650BF8A1910C04D004030F6 /* UWaterlooAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */; };
+		B650BF8B1910C04D004030F6 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF851910C04D004030F6 /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +46,6 @@
 		B650BF511910BFF4004030F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B650BF531910BFF4004030F6 /* uwaterloo-assistant-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uwaterloo-assistant-Prefix.pch"; sourceTree = "<group>"; };
 		B650BF551910BFF4004030F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		B650BF571910BFF4004030F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B650BF581910BFF4004030F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B650BF5B1910BFF4004030F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B650BF5D1910BFF4004030F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B650BF631910BFF4004030F6 /* uwaterloo-assistantTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uwaterloo-assistantTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,18 @@
 		B650BF6B1910BFF4004030F6 /* uwaterloo-assistantTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uwaterloo-assistantTests-Info.plist"; sourceTree = "<group>"; };
 		B650BF6D1910BFF4004030F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B650BF6F1910BFF4004030F6 /* uwaterloo_assistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uwaterloo_assistantTests.m; sourceTree = "<group>"; };
+		B650BF791910C04D004030F6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B650BF7A1910C04D004030F6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B650BF7B1910C04D004030F6 /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
+		B650BF7C1910C04D004030F6 /* Term.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Term.m; sourceTree = "<group>"; };
+		B650BF7D1910C04D004030F6 /* Terms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terms.h; sourceTree = "<group>"; };
+		B650BF7E1910C04D004030F6 /* Terms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Terms.m; sourceTree = "<group>"; };
+		B650BF801910C04D004030F6 /* UWaterlooAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPI.h; sourceTree = "<group>"; };
+		B650BF811910C04D004030F6 /* UWaterlooAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPI.m; sourceTree = "<group>"; };
+		B650BF821910C04D004030F6 /* UWaterlooAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPIRequest.h; sourceTree = "<group>"; };
+		B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPIRequest.m; sourceTree = "<group>"; };
+		B650BF841910C04D004030F6 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		B650BF851910C04D004030F6 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +130,10 @@
 		B650BF4B1910BFF4004030F6 /* uwaterloo-assistant */ = {
 			isa = PBXGroup;
 			children = (
-				B650BF571910BFF4004030F6 /* AppDelegate.h */,
-				B650BF581910BFF4004030F6 /* AppDelegate.m */,
+				B650BF8C1910C062004030F6 /* API */,
+				B650BF8D1910C068004030F6 /* API Objects */,
+				B650BF791910C04D004030F6 /* AppDelegate.h */,
+				B650BF7A1910C04D004030F6 /* AppDelegate.m */,
 				B650BF5A1910BFF4004030F6 /* MainMenu.xib */,
 				B650BF5D1910BFF4004030F6 /* Images.xcassets */,
 				B650BF4C1910BFF4004030F6 /* Supporting Files */,
@@ -152,6 +169,30 @@
 				B650BF6C1910BFF4004030F6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B650BF8C1910C062004030F6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B650BF801910C04D004030F6 /* UWaterlooAPI.h */,
+				B650BF811910C04D004030F6 /* UWaterlooAPI.m */,
+				B650BF821910C04D004030F6 /* UWaterlooAPIRequest.h */,
+				B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		B650BF8D1910C068004030F6 /* API Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B650BF7B1910C04D004030F6 /* Term.h */,
+				B650BF7C1910C04D004030F6 /* Term.m */,
+				B650BF7D1910C04D004030F6 /* Terms.h */,
+				B650BF7E1910C04D004030F6 /* Terms.m */,
+				B650BF841910C04D004030F6 /* Weather.h */,
+				B650BF851910C04D004030F6 /* Weather.m */,
+			);
+			name = "API Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,7 +247,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B650BF3D1910BFF4004030F6 /* Build configuration list for PBXProject "uwaterloo-assistant" */;
+			buildConfigurationList = B650BF3D1910BFF4004030F6 /* Build configuration list for PBXProject "uWaterloo Assistant" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -252,7 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B650BF591910BFF4004030F6 /* AppDelegate.m in Sources */,
+				B650BF871910C04D004030F6 /* Term.m in Sources */,
+				B650BF891910C04D004030F6 /* UWaterlooAPI.m in Sources */,
+				B650BF8B1910C04D004030F6 /* Weather.m in Sources */,
+				B650BF881910C04D004030F6 /* Terms.m in Sources */,
+				B650BF8A1910C04D004030F6 /* UWaterlooAPIRequest.m in Sources */,
+				B650BF861910C04D004030F6 /* AppDelegate.m in Sources */,
 				B650BF521910BFF4004030F6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +496,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B650BF3D1910BFF4004030F6 /* Build configuration list for PBXProject "uwaterloo-assistant" */ = {
+		B650BF3D1910BFF4004030F6 /* Build configuration list for PBXProject "uWaterloo Assistant" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B650BF711910BFF4004030F6 /* Debug */,
