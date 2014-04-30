@@ -24,6 +24,8 @@
 		B6366BD2191152DC0034B196 /* UWaterlooAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */; };
 		B6366BD3191152DC0034B196 /* Weather.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC9191152DC0034B196 /* Weather.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6366BD4191152DC0034B196 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BCA191152DC0034B196 /* Weather.m */; };
+		B6366BD81911649B0034B196 /* JSONUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BD61911649B0034B196 /* JSONUtils.h */; };
+		B6366BD91911649B0034B196 /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BD71911649B0034B196 /* JSONUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPIRequest.m; sourceTree = "<group>"; };
 		B6366BC9191152DC0034B196 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
 		B6366BCA191152DC0034B196 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		B6366BD61911649B0034B196 /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		B6366BD71911649B0034B196 /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,17 +130,14 @@
 		B6366B93191152A30034B196 /* uwaterloo-api */ = {
 			isa = PBXGroup;
 			children = (
-				B6366BC1191152DC0034B196 /* Term.h */,
-				B6366BC2191152DC0034B196 /* Term.m */,
-				B6366BC3191152DC0034B196 /* Terms.h */,
-				B6366BC4191152DC0034B196 /* Terms.m */,
+				B6366BDA191164BB0034B196 /* Data Types */,
 				B6366BC5191152DC0034B196 /* UWaterlooAPI.h */,
 				B6366BC6191152DC0034B196 /* UWaterlooAPI.m */,
 				B6366BC7191152DC0034B196 /* UWaterlooAPIRequest.h */,
 				B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */,
-				B6366BC9191152DC0034B196 /* Weather.h */,
-				B6366BCA191152DC0034B196 /* Weather.m */,
 				B6366B94191152A30034B196 /* Supporting Files */,
+				B6366BD61911649B0034B196 /* JSONUtils.h */,
+				B6366BD71911649B0034B196 /* JSONUtils.m */,
 			);
 			path = "uwaterloo-api";
 			sourceTree = "<group>";
@@ -169,6 +170,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B6366BDA191164BB0034B196 /* Data Types */ = {
+			isa = PBXGroup;
+			children = (
+				B6366BC1191152DC0034B196 /* Term.h */,
+				B6366BC2191152DC0034B196 /* Term.m */,
+				B6366BC3191152DC0034B196 /* Terms.h */,
+				B6366BC4191152DC0034B196 /* Terms.m */,
+				B6366BC9191152DC0034B196 /* Weather.h */,
+				B6366BCA191152DC0034B196 /* Weather.m */,
+			);
+			name = "Data Types";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -176,6 +190,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6366BD81911649B0034B196 /* JSONUtils.h in Headers */,
 				B6366BCD191152DC0034B196 /* Terms.h in Headers */,
 				B6366BCB191152DC0034B196 /* Term.h in Headers */,
 				B6366BCF191152DC0034B196 /* UWaterlooAPI.h in Headers */,
@@ -282,6 +297,7 @@
 				B6366BD0191152DC0034B196 /* UWaterlooAPI.m in Sources */,
 				B6366BD2191152DC0034B196 /* UWaterlooAPIRequest.m in Sources */,
 				B6366BCC191152DC0034B196 /* Term.m in Sources */,
+				B6366BD91911649B0034B196 /* JSONUtils.m in Sources */,
 				B6366BCE191152DC0034B196 /* Terms.m in Sources */,
 				B6366BD4191152DC0034B196 /* Weather.m in Sources */,
 			);

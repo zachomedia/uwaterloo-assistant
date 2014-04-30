@@ -8,6 +8,8 @@
 
 #import "Terms.h"
 
+#import "JSONUtils.h"
+
 @implementation Terms
 
 -(id)initWithDictionary:(NSDictionary *)dictionary
@@ -15,7 +17,7 @@
     if (self = [super init])
     {
         NSMutableDictionary *listings = [[NSMutableDictionary alloc] init];
-        NSDictionary *json_listings = [dictionary objectForKey:@"listings"];
+        NSDictionary *json_listings = [JSONUtils jsonValueOrNil:dictionary forKey:@"listings"];
         for (NSString *key in json_listings)
         {
             NSDictionary *year_terms = [json_listings objectForKey:key];
@@ -30,9 +32,9 @@
         
         self.terms = [[NSDictionary alloc] initWithDictionary:listings];
         
-        self.currentTerm = [self termForId:[[dictionary objectForKey:@"current_term"] integerValue]];
-        self.previousTerm = [self termForId:[[dictionary objectForKey:@"previous_term"] integerValue]];
-        self.nextTerm = [self termForId:[[dictionary objectForKey:@"next_term"] integerValue]];
+        self.currentTerm = [self termForId:[[JSONUtils jsonValueOrNil:dictionary forKey:@"current_term"] integerValue]];
+        self.previousTerm = [self termForId:[[JSONUtils jsonValueOrNil:dictionary forKey:@"previous_term"] integerValue]];
+        self.nextTerm = [self termForId:[[JSONUtils jsonValueOrNil:dictionary forKey:@"next_term"] integerValue]];
     }// End of if
     
     return self;

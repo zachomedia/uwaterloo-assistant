@@ -8,14 +8,16 @@
 
 #import "Term.h"
 
+#import "JSONUtils.h"
+
 @implementation Term
 
 -(id)initWithDictionary:(NSDictionary *)dictionary
 {
     if (self = [super init])
     {
-        self.id = [[dictionary objectForKey:@"id"] integerValue];
-        self.name = [dictionary objectForKey:@"name"];
+        self.id = [[JSONUtils jsonValueOrNil:dictionary forKey:@"id"] integerValue];
+        self.name = [JSONUtils jsonValueOrNil:dictionary forKey:@"name"];
     }// End of if
     
     return self;

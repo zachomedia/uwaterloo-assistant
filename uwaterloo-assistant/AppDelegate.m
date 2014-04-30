@@ -83,7 +83,17 @@
         NSMenu *submenu = [[NSMenu alloc] init];
         
         [submenu addItemWithTitle:[NSString stringWithFormat:@"Temperature: %@\u00B0C", weather.temperature] action:nil keyEquivalent:@""];
-                
+        
+        if (weather.humidex != nil)
+        {
+            [submenu addItemWithTitle:[NSString stringWithFormat:@"Humidex: %@\u00B0C", weather.humidex] action:nil keyEquivalent:@""];
+        }
+        
+        if (weather.windchill != nil)
+        {
+            [submenu addItemWithTitle:[NSString stringWithFormat:@"Windchill: %@\u00B0C", weather.humidex] action:nil keyEquivalent:@""];
+        }
+            
         [submenu addItemWithTitle:[NSString stringWithFormat:@"Wind: %@kph at %@\u00B0", weather.windSpeed, weather.windDirection] action:nil keyEquivalent:@""];
         
         [submenu addItem:[NSMenuItem separatorItem]];
