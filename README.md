@@ -7,9 +7,14 @@ This application is in the very early stages of development.
 
 The idea behind this application is that it runs in the OS X menu bar and provides information about classes, exams, weather, food services and more.
 
-## Information Source
+### Information Source
 
 All information displayed is provided by the University of Waterloo OpenData API (https://api.uwaterloo.ca/)
+
+## Compiling and Running
+
+1. An API key is required: https://api.uwaterloo.ca/
+2. Place the API key in AppDelegate.m: `api = [[UWaterlooAPI alloc] initWithAPIKey:@"API_KEY" andDelegate:self];`
 
 ## License
 
