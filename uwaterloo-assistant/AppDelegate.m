@@ -18,107 +18,142 @@
     
     api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY andDelegate:self];
     
-    [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:nil];
-    [api weatherWithSuccessSelector:@selector(weatherReceived:) failureSelector:nil];
-    
+    [self requestAPIData];
     [self createMenu];
 }
 
+-(void)requestAPIData
+{
+    [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:@selector(termsFailed:)];
+    [api weatherWithSuccessSelector:@selector(weatherReceived:) failureSelector:@selector(weatherFailed:)];
+}// End of requestAPIData
+
+#pragma Data Received/Failed selectors
+
 -(void)termsReceived:(Terms *)termsReceived
 {
-    Log("Terms Received!");
+    Log("Terms Received");
     terms = termsReceived;
-    [self createMenu];
-}// End of requestTerms
+    
+    [self updateTermMenuItem];
+}// End of termsReceived
+
+-(void)termsFailed:(NSError *)error
+{
+    Log("Terms Failed");
+    
+    [self updateTermMenuItem];
+}// End of termsFailed
 
 -(void)weatherReceived:(Weather *)weatherReceived
 {
-    Log("Weather Received!");
+    Log("Weather Received");
+    
     weather = weatherReceived;
-    [self createMenu];
-}// End of requestTerms
+    [self updateWeatherMenuItem];
+}// End of weatherReceived
+
+-(void)weatherFailed:(NSError *)error
+{
+    Log("Weather Failed");
+    
+    [self updateWeatherMenuItem];
+}// End of weatherFailed
 
 #pragma Menu
 
-- (void)createMenu
+-(void)createMenu
 {
-    Log(@"Creating menu...");
+    Log(@"Creating Menu");
     
-    NSStatusItem *statusItem = self.statusItem;
-    NSMenu *menu;
-    
-    if (statusItem == nil)
+    if (self.statusItem != nil)
     {
-        statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-        
-        statusItem.title = @"";
-        statusItem.image = [NSImage imageNamed:@"MenuBarIcon"];
-        statusItem.alternateImage = [NSImage imageNamed:@"MenuBarIconSelected"];
-        statusItem.highlightMode = YES;
-        
-        menu = [[NSMenu alloc] init];
-        statusItem.menu = menu;
+        Log(@"Menu has already been created. This method cannot be called multiple times.");
+        return;
     }// End of if
-    else
-    {
-        menu = statusItem.menu;
-        [menu removeAllItems];
-    }// End of else
     
-    // Current Term
-    if (terms != nil)
-    {
-        [menu addItemWithTitle:[NSString stringWithFormat:@"Current Term: %@", terms.currentTerm.name] action:nil keyEquivalent:@""];
-    }
-    else
-    {
-        [menu addItemWithTitle:@"Loading current term..." action:nil keyEquivalent:@""];
-    }
+    self.statusItem = [[NSStatusItem alloc] init];
+    NSMenu *menu = [[NSMenu alloc] init];
+    
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    
+    // Configure menu bar
+    self.statusItem.title = @"";
+    self.statusItem.image = [NSImage imageNamed:@"MenuBarIcon"];
+    self.statusItem.alternateImage = [NSImage imageNamed:@"MenuBarIconSelected"];
+    self.statusItem.highlightMode = YES;
+    self.statusItem.menu = menu;
+    
+    // Create menu items
+    termMenuItem = [menu addItemWithTitle:@"Loading term information..." action:nil keyEquivalent:@""];
     
     [menu addItem:[NSMenuItem separatorItem]];
     
-    if (weather != nil)
+    weatherMenuItem = [menu addItemWithTitle:@"Loading weather information..." action:nil keyEquivalent:@""];
+    
+    [menu addItem:[NSMenuItem separatorItem]];
+    
+    [menu addItemWithTitle:@"Refresh Data" action:@selector(requestAPIData) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Quit uWaterloo Assistant" action:@selector(terminate:) keyEquivalent:@""];
+}// End of createMenu
+
+#pragma Update Menu Items
+
+-(void)updateTermMenuItem
+{
+    Log(@"Updating term menu item");
+    
+    if (terms == nil)
     {
-        NSMenuItem *mnuItm = [menu addItemWithTitle:@"Weather" action:nil keyEquivalent:@""];
-        NSMenu *submenu = [[NSMenu alloc] init];
+        termMenuItem.title = @"Term Information Unavailable";
+    }// End of if
+    else
+    {
+        termMenuItem.title = [NSString stringWithFormat:@"Current Term: %@", terms.currentTerm.name];
+    }// End of else
+}// End of updateTermMenuItem
+
+-(void)updateWeatherMenuItem
+{
+    Log(@"Updating weather menu item");
+    
+    if (weather == nil)
+    {
+        weatherMenuItem.title = @"Weather Information Unavailable";
+        [weatherMenuItem.submenu removeAllItems];
+    }// End of if
+    else
+    {
+        NSMenu *menu = weatherMenuItem.submenu;
+        if (menu == nil)
+        {
+            menu = [[NSMenu alloc] init];
+            weatherMenuItem.submenu = menu;
+        }// End of if
+        [menu removeAllItems];
         
-        [submenu addItemWithTitle:[NSString stringWithFormat:@"Temperature: %@\u00B0C", weather.temperature] action:nil keyEquivalent:@""];
+        [menu addItemWithTitle:[NSString stringWithFormat:@"Temperature: %.1f\u00B0C", [weather.temperature doubleValue]] action:nil keyEquivalent:@""];
         
         if (weather.humidex != nil)
-        {
-            [submenu addItemWithTitle:[NSString stringWithFormat:@"Humidex: %@\u00B0C", weather.humidex] action:nil keyEquivalent:@""];
-        }
+            [menu addItemWithTitle:[NSString stringWithFormat:@"Humidex: %.1f\u00B0C", [weather.humidex doubleValue]] action:nil keyEquivalent:@""];
         
         if (weather.windchill != nil)
-        {
-            [submenu addItemWithTitle:[NSString stringWithFormat:@"Windchill: %@\u00B0C", weather.humidex] action:nil keyEquivalent:@""];
-        }
-            
-        [submenu addItemWithTitle:[NSString stringWithFormat:@"Wind: %@kph at %@\u00B0", weather.windSpeed, weather.windDirection] action:nil keyEquivalent:@""];
+            [menu addItemWithTitle:[NSString stringWithFormat:@"Windchill: %.1f\u00B0C", [weather.humidex doubleValue]] action:nil keyEquivalent:@""];
         
-        [submenu addItem:[NSMenuItem separatorItem]];
+        [menu addItem:[NSMenuItem separatorItem]];
+        
+        [menu addItemWithTitle:[NSString stringWithFormat:@"Wind: %.1fkph at %@\u00B0", [weather.windSpeed doubleValue], weather.windDirection] action:nil keyEquivalent:@""];
+        
+        [menu addItem:[NSMenuItem separatorItem]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterShortStyle];
         [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
         
-        [submenu addItemWithTitle:[NSString stringWithFormat:@"Observed: %@", [dateFormatter stringFromDate:weather.observationTime]] action:nil keyEquivalent:@""];
+        [menu addItemWithTitle:[NSString stringWithFormat:@"Observed: %@", [dateFormatter stringFromDate:weather.observationTime]] action:nil keyEquivalent:@""];
         
-        [mnuItm setSubmenu:submenu];
-    }
-    else
-    {
-        [menu addItemWithTitle:@"Loading current weather..." action:nil keyEquivalent:@""];
-    }
-    
-    [menu addItem:[NSMenuItem separatorItem]];
-    
-    // Weather
-    
-    // Application
-    [menu addItemWithTitle:@"Quit uWaterloo Assistant" action:@selector(terminate:) keyEquivalent:@""];
-
-    self.statusItem = statusItem;
-}
+        weatherMenuItem.title = @"Weather";
+    }// End of else
+}// End of updateWeatherMenuItem
 
 @end

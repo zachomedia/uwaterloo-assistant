@@ -18,6 +18,9 @@
     
     Terms *terms;
     Weather *weather;
+    
+    NSMenuItem *termMenuItem;
+    NSMenuItem *weatherMenuItem;
 }
 
 @property (assign) IBOutlet NSWindow *window;
