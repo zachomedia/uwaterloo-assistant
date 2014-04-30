@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6366B8E191152A30034B196 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366B8D191152A30034B196 /* Cocoa.framework */; };
+		B6366B98191152A30034B196 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6366B96191152A30034B196 /* InfoPlist.strings */; };
+		B6366BA3191152A30034B196 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BA2191152A30034B196 /* XCTest.framework */; };
+		B6366BA4191152A30034B196 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366B8D191152A30034B196 /* Cocoa.framework */; };
+		B6366BA7191152A30034B196 /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366B8A191152A30034B196 /* uwaterloo-api.framework */; };
+		B6366BAD191152A30034B196 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6366BAB191152A30034B196 /* InfoPlist.strings */; };
+		B6366BAF191152A30034B196 /* uwaterloo_apiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BAE191152A30034B196 /* uwaterloo_apiTests.m */; };
+		B6366BCB191152DC0034B196 /* Term.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC1191152DC0034B196 /* Term.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6366BCC191152DC0034B196 /* Term.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BC2191152DC0034B196 /* Term.m */; };
+		B6366BCD191152DC0034B196 /* Terms.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC3191152DC0034B196 /* Terms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6366BCE191152DC0034B196 /* Terms.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BC4191152DC0034B196 /* Terms.m */; };
+		B6366BCF191152DC0034B196 /* UWaterlooAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC5191152DC0034B196 /* UWaterlooAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6366BD0191152DC0034B196 /* UWaterlooAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BC6191152DC0034B196 /* UWaterlooAPI.m */; };
+		B6366BD1191152DC0034B196 /* UWaterlooAPIRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC7191152DC0034B196 /* UWaterlooAPIRequest.h */; };
+		B6366BD2191152DC0034B196 /* UWaterlooAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */; };
+		B6366BD3191152DC0034B196 /* Weather.h in Headers */ = {isa = PBXBuildFile; fileRef = B6366BC9191152DC0034B196 /* Weather.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6366BD4191152DC0034B196 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = B6366BCA191152DC0034B196 /* Weather.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6366BA5191152A30034B196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6366B81191152A30034B196 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6366B89191152A30034B196;
+			remoteInfo = "uwaterloo-api";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6366B8A191152A30034B196 /* uwaterloo-api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "uwaterloo-api.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6366B8D191152A30034B196 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B6366B90191152A30034B196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B6366B91191152A30034B196 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B6366B92191152A30034B196 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B6366B95191152A30034B196 /* uwaterloo-api-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uwaterloo-api-Info.plist"; sourceTree = "<group>"; };
+		B6366B97191152A30034B196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6366B99191152A30034B196 /* uwaterloo-api-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uwaterloo-api-Prefix.pch"; sourceTree = "<group>"; };
+		B6366BA1191152A30034B196 /* uwaterloo-apiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uwaterloo-apiTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6366BA2191152A30034B196 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B6366BAA191152A30034B196 /* uwaterloo-apiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "uwaterloo-apiTests-Info.plist"; sourceTree = "<group>"; };
+		B6366BAC191152A30034B196 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B6366BAE191152A30034B196 /* uwaterloo_apiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uwaterloo_apiTests.m; sourceTree = "<group>"; };
+		B6366BC1191152DC0034B196 /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
+		B6366BC2191152DC0034B196 /* Term.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Term.m; sourceTree = "<group>"; };
+		B6366BC3191152DC0034B196 /* Terms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terms.h; sourceTree = "<group>"; };
+		B6366BC4191152DC0034B196 /* Terms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Terms.m; sourceTree = "<group>"; };
+		B6366BC5191152DC0034B196 /* UWaterlooAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPI.h; sourceTree = "<group>"; };
+		B6366BC6191152DC0034B196 /* UWaterlooAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPI.m; sourceTree = "<group>"; };
+		B6366BC7191152DC0034B196 /* UWaterlooAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPIRequest.h; sourceTree = "<group>"; };
+		B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPIRequest.m; sourceTree = "<group>"; };
+		B6366BC9191152DC0034B196 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		B6366BCA191152DC0034B196 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6366B86191152A30034B196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366B8E191152A30034B196 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6366B9E191152A30034B196 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366BA4191152A30034B196 /* Cocoa.framework in Frameworks */,
+				B6366BA3191152A30034B196 /* XCTest.framework in Frameworks */,
+				B6366BA7191152A30034B196 /* uwaterloo-api.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6366B80191152A30034B196 = {
+			isa = PBXGroup;
+			children = (
+				B6366B93191152A30034B196 /* uwaterloo-api */,
+				B6366BA8191152A30034B196 /* uwaterloo-apiTests */,
+				B6366B8C191152A30034B196 /* Frameworks */,
+				B6366B8B191152A30034B196 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6366B8B191152A30034B196 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6366B8A191152A30034B196 /* uwaterloo-api.framework */,
+				B6366BA1191152A30034B196 /* uwaterloo-apiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6366B8C191152A30034B196 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6366B8D191152A30034B196 /* Cocoa.framework */,
+				B6366BA2191152A30034B196 /* XCTest.framework */,
+				B6366B8F191152A30034B196 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6366B8F191152A30034B196 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B6366B90191152A30034B196 /* Foundation.framework */,
+				B6366B91191152A30034B196 /* CoreData.framework */,
+				B6366B92191152A30034B196 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B6366B93191152A30034B196 /* uwaterloo-api */ = {
+			isa = PBXGroup;
+			children = (
+				B6366BC1191152DC0034B196 /* Term.h */,
+				B6366BC2191152DC0034B196 /* Term.m */,
+				B6366BC3191152DC0034B196 /* Terms.h */,
+				B6366BC4191152DC0034B196 /* Terms.m */,
+				B6366BC5191152DC0034B196 /* UWaterlooAPI.h */,
+				B6366BC6191152DC0034B196 /* UWaterlooAPI.m */,
+				B6366BC7191152DC0034B196 /* UWaterlooAPIRequest.h */,
+				B6366BC8191152DC0034B196 /* UWaterlooAPIRequest.m */,
+				B6366BC9191152DC0034B196 /* Weather.h */,
+				B6366BCA191152DC0034B196 /* Weather.m */,
+				B6366B94191152A30034B196 /* Supporting Files */,
+			);
+			path = "uwaterloo-api";
+			sourceTree = "<group>";
+		};
+		B6366B94191152A30034B196 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6366B95191152A30034B196 /* uwaterloo-api-Info.plist */,
+				B6366B96191152A30034B196 /* InfoPlist.strings */,
+				B6366B99191152A30034B196 /* uwaterloo-api-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B6366BA8191152A30034B196 /* uwaterloo-apiTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6366BAE191152A30034B196 /* uwaterloo_apiTests.m */,
+				B6366BA9191152A30034B196 /* Supporting Files */,
+			);
+			path = "uwaterloo-apiTests";
+			sourceTree = "<group>";
+		};
+		B6366BA9191152A30034B196 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6366BAA191152A30034B196 /* uwaterloo-apiTests-Info.plist */,
+				B6366BAB191152A30034B196 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B6366B87191152A30034B196 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366BCD191152DC0034B196 /* Terms.h in Headers */,
+				B6366BCB191152DC0034B196 /* Term.h in Headers */,
+				B6366BCF191152DC0034B196 /* UWaterlooAPI.h in Headers */,
+				B6366BD3191152DC0034B196 /* Weather.h in Headers */,
+				B6366BD1191152DC0034B196 /* UWaterlooAPIRequest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B6366B89191152A30034B196 /* uwaterloo-api */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6366BB2191152A30034B196 /* Build configuration list for PBXNativeTarget "uwaterloo-api" */;
+			buildPhases = (
+				B6366B85191152A30034B196 /* Sources */,
+				B6366B86191152A30034B196 /* Frameworks */,
+				B6366B87191152A30034B196 /* Headers */,
+				B6366B88191152A30034B196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uwaterloo-api";
+			productName = "uwaterloo-api";
+			productReference = B6366B8A191152A30034B196 /* uwaterloo-api.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6366BA0191152A30034B196 /* uwaterloo-apiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6366BB5191152A30034B196 /* Build configuration list for PBXNativeTarget "uwaterloo-apiTests" */;
+			buildPhases = (
+				B6366B9D191152A30034B196 /* Sources */,
+				B6366B9E191152A30034B196 /* Frameworks */,
+				B6366B9F191152A30034B196 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6366BA6191152A30034B196 /* PBXTargetDependency */,
+			);
+			name = "uwaterloo-apiTests";
+			productName = "uwaterloo-apiTests";
+			productReference = B6366BA1191152A30034B196 /* uwaterloo-apiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6366B81191152A30034B196 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Zachary Seguin";
+				TargetAttributes = {
+					B6366BA0191152A30034B196 = {
+						TestTargetID = B6366B89191152A30034B196;
+					};
+				};
+			};
+			buildConfigurationList = B6366B84191152A30034B196 /* Build configuration list for PBXProject "uwaterloo-api" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B6366B80191152A30034B196;
+			productRefGroup = B6366B8B191152A30034B196 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6366B89191152A30034B196 /* uwaterloo-api */,
+				B6366BA0191152A30034B196 /* uwaterloo-apiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6366B88191152A30034B196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366B98191152A30034B196 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6366B9F191152A30034B196 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366BAD191152A30034B196 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6366B85191152A30034B196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366BD0191152DC0034B196 /* UWaterlooAPI.m in Sources */,
+				B6366BD2191152DC0034B196 /* UWaterlooAPIRequest.m in Sources */,
+				B6366BCC191152DC0034B196 /* Term.m in Sources */,
+				B6366BCE191152DC0034B196 /* Terms.m in Sources */,
+				B6366BD4191152DC0034B196 /* Weather.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6366B9D191152A30034B196 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6366BAF191152A30034B196 /* uwaterloo_apiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6366BA6191152A30034B196 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6366B89191152A30034B196 /* uwaterloo-api */;
+			targetProxy = B6366BA5191152A30034B196 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6366B96191152A30034B196 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6366B97191152A30034B196 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B6366BAB191152A30034B196 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6366BAC191152A30034B196 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6366BB0191152A30034B196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B6366BB1191152A30034B196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B6366BB3191152A30034B196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
+				INFOPLIST_FILE = "uwaterloo-api/uwaterloo-api-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		B6366BB4191152A30034B196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
+				INFOPLIST_FILE = "uwaterloo-api/uwaterloo-api-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		B6366BB6191152A30034B196 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uwaterloo-api.framework/Versions/A/uwaterloo-api";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "uwaterloo-apiTests/uwaterloo-apiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B6366BB7191152A30034B196 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/uwaterloo-api.framework/Versions/A/uwaterloo-api";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
+				INFOPLIST_FILE = "uwaterloo-apiTests/uwaterloo-apiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6366B84191152A30034B196 /* Build configuration list for PBXProject "uwaterloo-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6366BB0191152A30034B196 /* Debug */,
+				B6366BB1191152A30034B196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6366BB2191152A30034B196 /* Build configuration list for PBXNativeTarget "uwaterloo-api" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6366BB3191152A30034B196 /* Debug */,
+				B6366BB4191152A30034B196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B6366BB5191152A30034B196 /* Build configuration list for PBXNativeTarget "uwaterloo-apiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6366BB6191152A30034B196 /* Debug */,
+				B6366BB7191152A30034B196 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6366B81191152A30034B196 /* Project object */;
+}

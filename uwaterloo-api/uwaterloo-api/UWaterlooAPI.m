@@ -8,6 +8,8 @@
 
 #import "UWaterlooAPI.h"
 
+#import "UWaterlooAPIRequest.h"
+
 @implementation UWaterlooAPI
 
 -(id)initWithAPIKey:(NSString *)key andDelegate:(id)del

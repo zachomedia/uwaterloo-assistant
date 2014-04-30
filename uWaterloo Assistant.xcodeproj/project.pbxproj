@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BBE191152A40034B196 /* uwaterloo-api.framework */; };
 		B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF451910BFF4004030F6 /* Cocoa.framework */; };
 		B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF4E1910BFF4004030F6 /* InfoPlist.strings */; };
 		B650BF521910BFF4004030F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF511910BFF4004030F6 /* main.m */; };
@@ -18,14 +19,23 @@
 		B650BF6E1910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF6C1910BFF4004030F6 /* InfoPlist.strings */; };
 		B650BF701910BFF4004030F6 /* uwaterloo_assistantTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF6F1910BFF4004030F6 /* uwaterloo_assistantTests.m */; };
 		B650BF861910C04D004030F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7A1910C04D004030F6 /* AppDelegate.m */; };
-		B650BF871910C04D004030F6 /* Term.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7C1910C04D004030F6 /* Term.m */; };
-		B650BF881910C04D004030F6 /* Terms.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF7E1910C04D004030F6 /* Terms.m */; };
-		B650BF891910C04D004030F6 /* UWaterlooAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF811910C04D004030F6 /* UWaterlooAPI.m */; };
-		B650BF8A1910C04D004030F6 /* UWaterlooAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */; };
-		B650BF8B1910C04D004030F6 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF851910C04D004030F6 /* Weather.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B6366BBD191152A40034B196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6366B8A191152A30034B196;
+			remoteInfo = "uwaterloo-api";
+		};
+		B6366BBF191152A40034B196 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6366BA1191152A30034B196;
+			remoteInfo = "uwaterloo-apiTests";
+		};
 		B650BF671910BFF4004030F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B650BF3A1910BFF4004030F6 /* Project object */;
@@ -36,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6366B7F191152490034B196 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKey.h; sourceTree = "<group>"; };
+		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
 		B650BF421910BFF4004030F6 /* uwaterloo-assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uwaterloo-assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B650BF481910BFF4004030F6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -55,16 +67,6 @@
 		B650BF6F1910BFF4004030F6 /* uwaterloo_assistantTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = uwaterloo_assistantTests.m; sourceTree = "<group>"; };
 		B650BF791910C04D004030F6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B650BF7A1910C04D004030F6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B650BF7B1910C04D004030F6 /* Term.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Term.h; sourceTree = "<group>"; };
-		B650BF7C1910C04D004030F6 /* Term.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Term.m; sourceTree = "<group>"; };
-		B650BF7D1910C04D004030F6 /* Terms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Terms.h; sourceTree = "<group>"; };
-		B650BF7E1910C04D004030F6 /* Terms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Terms.m; sourceTree = "<group>"; };
-		B650BF801910C04D004030F6 /* UWaterlooAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPI.h; sourceTree = "<group>"; };
-		B650BF811910C04D004030F6 /* UWaterlooAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPI.m; sourceTree = "<group>"; };
-		B650BF821910C04D004030F6 /* UWaterlooAPIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UWaterlooAPIRequest.h; sourceTree = "<group>"; };
-		B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UWaterlooAPIRequest.m; sourceTree = "<group>"; };
-		B650BF841910C04D004030F6 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
-		B650BF851910C04D004030F6 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */,
 				B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,9 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B6366BB9191152A30034B196 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6366BBE191152A40034B196 /* uwaterloo-api.framework */,
+				B6366BC0191152A40034B196 /* uwaterloo-apiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B650BF391910BFF4004030F6 = {
 			isa = PBXGroup;
 			children = (
+				B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */,
 				B650BF4B1910BFF4004030F6 /* uwaterloo-assistant */,
 				B650BF691910BFF4004030F6 /* uwaterloo-assistantTests */,
 				B650BF441910BFF4004030F6 /* Frameworks */,
@@ -130,8 +143,7 @@
 		B650BF4B1910BFF4004030F6 /* uwaterloo-assistant */ = {
 			isa = PBXGroup;
 			children = (
-				B650BF8C1910C062004030F6 /* API */,
-				B650BF8D1910C068004030F6 /* API Objects */,
+				B6366B7F191152490034B196 /* APIKey.h */,
 				B650BF791910C04D004030F6 /* AppDelegate.h */,
 				B650BF7A1910C04D004030F6 /* AppDelegate.m */,
 				B650BF5A1910BFF4004030F6 /* MainMenu.xib */,
@@ -169,30 +181,6 @@
 				B650BF6C1910BFF4004030F6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B650BF8C1910C062004030F6 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				B650BF801910C04D004030F6 /* UWaterlooAPI.h */,
-				B650BF811910C04D004030F6 /* UWaterlooAPI.m */,
-				B650BF821910C04D004030F6 /* UWaterlooAPIRequest.h */,
-				B650BF831910C04D004030F6 /* UWaterlooAPIRequest.m */,
-			);
-			name = API;
-			sourceTree = "<group>";
-		};
-		B650BF8D1910C068004030F6 /* API Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B650BF7B1910C04D004030F6 /* Term.h */,
-				B650BF7C1910C04D004030F6 /* Term.m */,
-				B650BF7D1910C04D004030F6 /* Terms.h */,
-				B650BF7E1910C04D004030F6 /* Terms.m */,
-				B650BF841910C04D004030F6 /* Weather.h */,
-				B650BF851910C04D004030F6 /* Weather.m */,
-			);
-			name = "API Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +246,12 @@
 			mainGroup = B650BF391910BFF4004030F6;
 			productRefGroup = B650BF431910BFF4004030F6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B6366BB9191152A30034B196 /* Products */;
+					ProjectRef = B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B650BF411910BFF4004030F6 /* uwaterloo-assistant */,
@@ -265,6 +259,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B6366BBE191152A40034B196 /* uwaterloo-api.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "uwaterloo-api.framework";
+			remoteRef = B6366BBD191152A40034B196 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B6366BC0191152A40034B196 /* uwaterloo-apiTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "uwaterloo-apiTests.xctest";
+			remoteRef = B6366BBF191152A40034B196 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B650BF401910BFF4004030F6 /* Resources */ = {
@@ -293,11 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B650BF871910C04D004030F6 /* Term.m in Sources */,
-				B650BF891910C04D004030F6 /* UWaterlooAPI.m in Sources */,
-				B650BF8B1910C04D004030F6 /* Weather.m in Sources */,
-				B650BF881910C04D004030F6 /* Terms.m in Sources */,
-				B650BF8A1910C04D004030F6 /* UWaterlooAPIRequest.m in Sources */,
 				B650BF861910C04D004030F6 /* AppDelegate.m in Sources */,
 				B650BF521910BFF4004030F6 /* main.m in Sources */,
 			);
@@ -512,6 +518,7 @@
 				B650BF751910BFF4004030F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B650BF761910BFF4004030F6 /* Build configuration list for PBXNativeTarget "uwaterloo-assistantTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +527,7 @@
 				B650BF781910BFF4004030F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "UWaterlooAPI.h"
-
-#import "Terms.h"
+#import <uwaterloo-api/UWaterlooAPI.h>
+#import <uwaterloo-api/Terms.h>
+#import <uwaterloo-api/Weather.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {

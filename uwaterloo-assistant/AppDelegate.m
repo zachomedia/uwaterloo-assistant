@@ -8,13 +8,15 @@
 
 #import "AppDelegate.h"
 
+#import "APIKey.h"
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     Log(@"Creating Menu...");
     
-    api = [[UWaterlooAPI alloc] initWithAPIKey:@"API_KEY" andDelegate:self];
+    api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY andDelegate:self];
     
     [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:nil];
     [api weatherWithSuccessSelector:@selector(weatherReceived:) failureSelector:nil];
@@ -35,11 +37,6 @@
     weather = weatherReceived;
     [self createMenu];
 }// End of requestTerms
-
-
-#pragma Connection Delegate Events
-
-
 
 #pragma Menu
 

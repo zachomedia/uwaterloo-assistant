@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "UWaterlooAPIRequest.h"
-
 #import "Terms.h"
 #import "Weather.h"
 
