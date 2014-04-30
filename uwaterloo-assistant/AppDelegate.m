@@ -41,9 +41,7 @@
     
     longRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:(2 * 3600) target:self selector:@selector(longRefreshTimerTick) userInfo:nil repeats:YES];
     
-    [shortRefreshTimer fire];
-    [longRefreshTimer fire];
-    
+    [self requestAPIData];
     [self createMenu];
 }// End of applicationDidFinishLaunching
 
@@ -58,6 +56,12 @@
     Log(@"Long Refresh Timer Tick");
     [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:@selector(termsFailed:)];
 }// End of longRefreshTimerTick
+
+-(void)requestAPIData
+{
+    [shortRefreshTimer fire];
+    [longRefreshTimer fire];
+}// End of requestAPIData
 
 #pragma Data Received/Failed selectors
 
