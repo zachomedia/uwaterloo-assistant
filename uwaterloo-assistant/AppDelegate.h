@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import <uwaterloo-api/UWaterlooAPI.h>
+#import "PreferencesWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 {
@@ -19,7 +20,11 @@
     
     NSMenuItem *termMenuItem;
     NSMenuItem *weatherMenuItem;
+    
+    PreferencesWindowController *preferencesWindowController;
 }
+
+- (IBAction)showPreferences:(id)sender;
 
 @property (assign) IBOutlet NSWindow *window;
 @property (strong, nonatomic) NSStatusItem *statusItem;

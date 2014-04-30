@@ -500,6 +500,7 @@
 				B6366BB4191152A30034B196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6366BB5191152A30034B196 /* Build configuration list for PBXNativeTarget "uwaterloo-apiTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +509,7 @@
 				B6366BB7191152A30034B196 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

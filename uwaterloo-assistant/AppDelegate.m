@@ -98,12 +98,25 @@
     [menu addItem:[NSMenuItem separatorItem]];
     
     [menu addItemWithTitle:@"Refresh Data" action:@selector(requestAPIData) keyEquivalent:@""];
-    [menu addItemWithTitle:@"Preferences... (Coming Soon)" action:nil keyEquivalent:@""];
+    [menu addItemWithTitle:@"Preferences..." action:@selector(showPreferences:) keyEquivalent:@""];
     
     [menu addItem:[NSMenuItem separatorItem]];
     
     [menu addItemWithTitle:@"Quit uWaterloo Assistant" action:@selector(terminate:) keyEquivalent:@""];
 }// End of createMenu
+
+-(IBAction)showPreferences:(id)sender
+{
+    [NSApp setActivationPolicy: NSApplicationActivationPolicyRegular];
+    
+    if (preferencesWindowController == nil)
+    {
+        preferencesWindowController = [[PreferencesWindowController alloc] init];
+    }
+    
+    [NSApp activateIgnoringOtherApps:YES];
+    [preferencesWindowController showWindow:self];
+}// End of showPreferences
 
 #pragma Update Menu Items
 
