@@ -76,6 +76,7 @@
 		B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCourseWindow.xib; sourceTree = "<group>"; };
 		B60A13411912038500AA4DC9 /* DataPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPersistance.h; sourceTree = "<group>"; };
 		B60A13421912038500AA4DC9 /* DataPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPersistance.m; sourceTree = "<group>"; };
+		B60A13591912FCAC00AA4DC9 /* uWaterloo Assistant.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "uWaterloo Assistant.entitlements"; sourceTree = "<group>"; };
 		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
 		B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uWaterloo Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -175,6 +176,7 @@
 		B650BF391910BFF4004030F6 = {
 			isa = PBXGroup;
 			children = (
+				B60A13591912FCAC00AA4DC9 /* uWaterloo Assistant.entitlements */,
 				B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */,
 				B650BF4B1910BFF4004030F6 /* uwaterloo-assistant */,
 				B650BF691910BFF4004030F6 /* uwaterloo-assistantTests */,
@@ -309,6 +311,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Zachary Seguin";
 				TargetAttributes = {
+					B650BF411910BFF4004030F6 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					B650BF621910BFF4004030F6 = {
 						TestTargetID = B650BF411910BFF4004030F6;
 					};
@@ -527,6 +536,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "uWaterloo Assistant.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uwaterloo-assistant/uWaterloo Assistant-Prefix.pch";
@@ -540,6 +551,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "uWaterloo Assistant.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uwaterloo-assistant/uWaterloo Assistant-Prefix.pch";
