@@ -139,7 +139,7 @@
     termMenuItem = [menu addItemWithTitle:@"Loading term information..." action:nil keyEquivalent:@""];
     
     coursesMenuItem = [menu addItemWithTitle:@"Loading courses..." action:nil keyEquivalent:@""];
-    [self updateCoursesMenuItem]; // TEMP
+    [self updateCoursesMenuItem];
     
     [menu addItem:[NSMenuItem separatorItem]];
     
@@ -147,6 +147,13 @@
     
     [menu addItem:[NSMenuItem separatorItem]];
     
+    // Links
+    [menu addItemWithTitle:@"Open Learn..." action:@selector(openLearn) keyEquivalent:@""];
+    [menu addItemWithTitle:@"Open Quest..." action:@selector(openQuest) keyEquivalent:@""];
+    
+    [menu addItem:[NSMenuItem separatorItem]];
+    
+    // App Actions
     [menu addItemWithTitle:@"Refresh Data" action:@selector(requestAPIData) keyEquivalent:@""];
     [menu addItemWithTitle:@"Preferences..." action:@selector(showPreferences:) keyEquivalent:@""];
     
@@ -154,6 +161,18 @@
     
     [menu addItemWithTitle:@"Quit uWaterloo Assistant" action:@selector(terminate:) keyEquivalent:@""];
 }// End of createMenu
+
+-(void)openLearn
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"https://learn.uwaterloo.ca/"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}// End of openLearn
+
+-(void)openQuest
+{
+    NSURL *url = [[NSURL alloc] initWithString:@"https://quest.pecs.uwaterloo.ca/psp/SS?cmd=login"];
+    [[NSWorkspace sharedWorkspace] openURL:url];
+}// End of openLearn
 
 -(IBAction)showPreferences:(id)sender
 {
@@ -189,7 +208,8 @@
     if (weather == nil)
     {
         weatherMenuItem.title = @"Weather Information Unavailable";
-        [weatherMenuItem.submenu removeAllItems];
+        weatherMenuItem.submenu = nil;
+        [weatherMenuItem setEnabled:NO];
     }// End of if
     else
     {
@@ -222,6 +242,7 @@
         [menu addItemWithTitle:[NSString stringWithFormat:@"Observed: %@", [dateFormatter stringFromDate:weather.observationTime]] action:nil keyEquivalent:@""];
         
         weatherMenuItem.title = @"Weather";
+        [weatherMenuItem setEnabled:YES];
     }// End of else
 }// End of updateWeatherMenuItem
 
