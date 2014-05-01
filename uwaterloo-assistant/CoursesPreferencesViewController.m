@@ -78,6 +78,8 @@
     NSIndexSet *selected = [self.selectedCoursesTableview selectedRowIndexes];
     [selectedSections removeObjectsAtIndexes:selected];
     
+    [self savePreferences];
+    
     [self.selectedCoursesTableview reloadData];
     [self.removeCourseButton setEnabled:NO];
 }// End of removeCourse
@@ -88,38 +90,31 @@
     return [selectedSections count];
 }// End of numberOfRowsInTableView
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+-(NSCell *)tableView:(NSTableView *)tableView dataCellForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
 {
-    Log(@"Loading view...");
-    NSTextField *field = [tableView makeViewWithIdentifier:@"CourseField" owner:self];
+    NSTextFieldCell *field = [tableColumn dataCell];
+    [field setEditable:NO];
     
-    if (field == nil)
-    {
-        field = [[NSTextField alloc] init];
-        field.identifier = @"CourseField";
-        
-        [field setBordered:NO];
-        [field setEditable:NO];
-        [field setBackgroundColor:[NSColor colorWithWhite:1.0 alpha:0.0]];
-    }// End of if
+    return field;
+}// End of tableView dataCellForTableColumn row
 
+-(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
     Section *section = (Section *)[selectedSections objectAtIndex:row];
     
     if (tableColumn == self.courseCodeColumn)
     {
-        field.stringValue = [NSString stringWithFormat:@"%@ %@", section.subject, section.catalogNumber];
-    }
+        return [NSString stringWithFormat:@"%@ %@", section.subject, section.catalogNumber];
+    }// End of if
     else if (tableColumn == self.courseNameColumn)
     {
-        field.stringValue = section.title;
-    }
-    else if (tableColumn == self.sectionColumn)
+        return section.title;
+    }// End of else if
+    else
     {
-        field.stringValue = section.section;
-    }
-    
-    return field;
-}// End of tableView viewForTableColumn row
+        return section.section;
+    }// End of else
+}// End of tableView objectValueForTableColumn
 
 -(void)tableViewSelectionDidChange:(NSNotification *)notification
 {

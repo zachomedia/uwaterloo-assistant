@@ -104,13 +104,16 @@
     
     if (index < 0)
     {
-        // Load courses for subject
         [self.courseDropdown removeAllItems];
         [self.courseDropdown addItemWithTitle:@""];
         [self.courseDropdown setEnabled:NO];
         
+        [self.sectionDropdown removeAllItems];
+        [self.sectionDropdown addItemWithTitle:@""];
+        [self.sectionDropdown setEnabled:NO];
+        
         return;
-    }
+    }// End of if
     
     // Load courses for subject
     [self.courseDropdown removeAllItems];
@@ -146,8 +149,9 @@
         [self.sectionDropdown removeAllItems];
         [self.sectionDropdown addItemWithTitle:@""];
         [self.sectionDropdown setEnabled:NO];
+        
         return;
-    }
+    }// End of if
     
     // Load sections
     [self.sectionDropdown removeAllItems];

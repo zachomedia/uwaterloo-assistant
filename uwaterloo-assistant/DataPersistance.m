@@ -34,11 +34,11 @@
         {
             Section *section = [NSKeyedUnarchiver unarchiveObjectWithData:encoded];
             [mcourses addObject:section];
-        }
+        }// End of try
         @catch (NSException *ex)
         {
             Log(@"Exception: %@", ex.description);
-        }
+        }// End of catch
     }// End of for
     
     Log(@"Decoded %zd sections.", [mcourses count]);

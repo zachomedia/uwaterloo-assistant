@@ -35,6 +35,9 @@
     // Hide the Dock icon
     [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
     
+    // Register for updates to NSUserDefaults
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
+    
     // Load stored data
     userSections = [DataPersistance userSections];
     
@@ -49,6 +52,12 @@
     [self requestAPIData];
     [self createMenu];
 }// End of applicationDidFinishLaunching
+
+-(void)defaultsChanged:(NSNotification *)notification
+{
+    userSections = [DataPersistance userSections];
+    [self updateCoursesMenuItem];
+}// End of defaultsChanged
 
 -(void)shortRefreshTimerTick
 {

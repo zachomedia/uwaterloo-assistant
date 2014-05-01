@@ -53,6 +53,11 @@
 {
     Log(@"Tab Selected");
     
+    if (activePrefencesView != nil)
+    {
+        [activePrefencesView savePreferences];
+    }// End of if
+    
     NSToolbarItem *tab = (NSToolbarItem *)sender;
     
     if (tab == self.generalTab)
@@ -75,12 +80,6 @@
     }// End of else if
     
     self.window.contentView = activePrefencesView.view;
-    [self resizeWindow];
 }// End of tabSelected
-
--(void)resizeWindow
-{
-    Log(@"Content View Size: %f", [self.window.contentView bounds].size.height);
-}
 
 @end
