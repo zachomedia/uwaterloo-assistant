@@ -15,6 +15,12 @@
 		B60A13401911E3C600AA4DC9 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A133E1911E3C600AA4DC9 /* Course.m */; };
 		B60A134619120DF200AA4DC9 /* Section.h in Headers */ = {isa = PBXBuildFile; fileRef = B60A134419120DF200AA4DC9 /* Section.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B60A134719120DF200AA4DC9 /* Section.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A134519120DF200AA4DC9 /* Section.m */; };
+		B60A134B1912CA3200AA4DC9 /* CapacityInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = B60A13491912CA3200AA4DC9 /* CapacityInformation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B60A134C1912CA3200AA4DC9 /* CapacityInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A134A1912CA3200AA4DC9 /* CapacityInformation.m */; };
+		B60A134F1912D3BE00AA4DC9 /* Reserve.h in Headers */ = {isa = PBXBuildFile; fileRef = B60A134D1912D3BE00AA4DC9 /* Reserve.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B60A13501912D3BE00AA4DC9 /* Reserve.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A134E1912D3BE00AA4DC9 /* Reserve.m */; };
+		B60A13571912D8E800AA4DC9 /* Session.h in Headers */ = {isa = PBXBuildFile; fileRef = B60A13551912D8E800AA4DC9 /* Session.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B60A13581912D8E800AA4DC9 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13561912D8E800AA4DC9 /* Session.m */; };
 		B6366B8E191152A30034B196 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366B8D191152A30034B196 /* Cocoa.framework */; };
 		B6366B98191152A30034B196 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6366B96191152A30034B196 /* InfoPlist.strings */; };
 		B6366BA3191152A30034B196 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BA2191152A30034B196 /* XCTest.framework */; };
@@ -55,6 +61,12 @@
 		B60A133E1911E3C600AA4DC9 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		B60A134419120DF200AA4DC9 /* Section.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Section.h; sourceTree = "<group>"; };
 		B60A134519120DF200AA4DC9 /* Section.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Section.m; sourceTree = "<group>"; };
+		B60A13491912CA3200AA4DC9 /* CapacityInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CapacityInformation.h; sourceTree = "<group>"; };
+		B60A134A1912CA3200AA4DC9 /* CapacityInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CapacityInformation.m; sourceTree = "<group>"; };
+		B60A134D1912D3BE00AA4DC9 /* Reserve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reserve.h; sourceTree = "<group>"; };
+		B60A134E1912D3BE00AA4DC9 /* Reserve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reserve.m; sourceTree = "<group>"; };
+		B60A13551912D8E800AA4DC9 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		B60A13561912D8E800AA4DC9 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		B6366B8A191152A30034B196 /* uwaterloo-api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "uwaterloo-api.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6366B8D191152A30034B196 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B6366B90191152A30034B196 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +116,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B60A13481912CA1700AA4DC9 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				B60A134419120DF200AA4DC9 /* Section.h */,
+				B60A134519120DF200AA4DC9 /* Section.m */,
+				B60A13491912CA3200AA4DC9 /* CapacityInformation.h */,
+				B60A134A1912CA3200AA4DC9 /* CapacityInformation.m */,
+				B60A134D1912D3BE00AA4DC9 /* Reserve.h */,
+				B60A134E1912D3BE00AA4DC9 /* Reserve.m */,
+				B60A13551912D8E800AA4DC9 /* Session.h */,
+				B60A13561912D8E800AA4DC9 /* Session.m */,
+			);
+			name = Section;
+			sourceTree = "<group>";
+		};
 		B6366B80191152A30034B196 = {
 			isa = PBXGroup;
 			children = (
@@ -201,8 +228,7 @@
 				B60A132A1911A92E00AA4DC9 /* Subject.m */,
 				B60A133D1911E3C600AA4DC9 /* Course.h */,
 				B60A133E1911E3C600AA4DC9 /* Course.m */,
-				B60A134419120DF200AA4DC9 /* Section.h */,
-				B60A134519120DF200AA4DC9 /* Section.m */,
+				B60A13481912CA1700AA4DC9 /* Section */,
 			);
 			name = "Data Types";
 			sourceTree = "<group>";
@@ -220,6 +246,9 @@
 				B60A13271911A8BF00AA4DC9 /* Subjects.h in Headers */,
 				B6366BCF191152DC0034B196 /* UWaterlooAPI.h in Headers */,
 				B60A132B1911A92E00AA4DC9 /* Subject.h in Headers */,
+				B60A134B1912CA3200AA4DC9 /* CapacityInformation.h in Headers */,
+				B60A134F1912D3BE00AA4DC9 /* Reserve.h in Headers */,
+				B60A13571912D8E800AA4DC9 /* Session.h in Headers */,
 				B60A133F1911E3C600AA4DC9 /* Course.h in Headers */,
 				B60A134619120DF200AA4DC9 /* Section.h in Headers */,
 				B6366BD3191152DC0034B196 /* Weather.h in Headers */,
@@ -325,12 +354,15 @@
 				B6366BD0191152DC0034B196 /* UWaterlooAPI.m in Sources */,
 				B6366BD2191152DC0034B196 /* UWaterlooAPIRequest.m in Sources */,
 				B6366BCC191152DC0034B196 /* Term.m in Sources */,
+				B60A13581912D8E800AA4DC9 /* Session.m in Sources */,
 				B60A134719120DF200AA4DC9 /* Section.m in Sources */,
 				B6366BD91911649B0034B196 /* JSONUtils.m in Sources */,
 				B60A13401911E3C600AA4DC9 /* Course.m in Sources */,
 				B60A132C1911A92E00AA4DC9 /* Subject.m in Sources */,
 				B60A13281911A8BF00AA4DC9 /* Subjects.m in Sources */,
+				B60A13501912D3BE00AA4DC9 /* Reserve.m in Sources */,
 				B6366BCE191152DC0034B196 /* Terms.m in Sources */,
+				B60A134C1912CA3200AA4DC9 /* CapacityInformation.m in Sources */,
 				B6366BD4191152DC0034B196 /* Weather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

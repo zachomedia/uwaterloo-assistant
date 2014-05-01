@@ -253,11 +253,95 @@
             
             [submenu addItem:[NSMenuItem separatorItem]];
             
-            [submenu addItemWithTitle:@"Schedule Information Coming Soon" action:nil keyEquivalent:@""];
+            NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+            [timeFormatter setDateStyle:NSDateFormatterNoStyle];
+            [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+            
+            for (NSInteger x = 0; x < section.sessions.count; ++x)
+            {
+                Session *session = [section.sessions objectAtIndex:x];
+                
+                if (session.cancelled)
+                {
+                    [submenu addItemWithTitle:@"Cancelled" action:nil keyEquivalent:@""];
+                }// End of if
+                else if (session.toBeAnnounced)
+                {
+                    [submenu addItemWithTitle:@"To Be Announced" action:nil keyEquivalent:@""];
+                }// End of else if
+                else
+                {
+                    NSString *weekdays = @"";
+                    
+                    for (NSValue *vweekday in session.weekdays)
+                    {
+                        Weekday weekday;
+                        NSString *strWeekday = @"";
+                        
+                        [vweekday getValue:&weekday];
+                        
+                        switch (weekday)
+                        {
+                            case WeekdaySunday:
+                                strWeekday = @"Sunday";
+                                break;
+                                
+                            case WeekdayMonday:
+                                strWeekday = @"Monday";
+                                break;
+                                
+                            case WeekdayTuesday:
+                                strWeekday = @"Tuesday";
+                                break;
+                                
+                            case WeekdayWednesday:
+                                strWeekday = @"Wednesday";
+                                break;
+                                
+                            case WeekdayThursday:
+                                strWeekday = @"Thursday";
+                                break;
+                                
+                            case WeekdayFriday:
+                                strWeekday = @"Friday";
+                                break;
+                                
+                            case WeekdaySaturday:
+                                strWeekday = @"Saturday";
+                                break;
+                        }// End of swtich
+                        
+                        if (weekdays.length > 0)
+                        {
+                            weekdays = [weekdays stringByAppendingString:@", "];
+                        }// End of if
+                        
+                        weekdays = [weekdays stringByAppendingFormat:@"%@", strWeekday];
+                    }// End of weekday
+                    
+                    [submenu addItemWithTitle:weekdays action:nil keyEquivalent:@""];
+                    
+                    [submenu addItemWithTitle:[NSString stringWithFormat:@"%@ - %@", [timeFormatter stringFromDate:session.startTime], [timeFormatter stringFromDate:session.endTime]] action:nil keyEquivalent:@""];
+                    
+                    [submenu addItemWithTitle:[NSString stringWithFormat:@"%@ %@", session.building, session.room] action:nil keyEquivalent:@""];
+
+                }// End of else
+                
+                
+                if (x != section.sessions.count - 1)
+                {
+                    [submenu addItemWithTitle:@"" action:nil keyEquivalent:@""];
+                }// End of if
+            }// End of for
             
             NSMenuItem *itm = [menu addItemWithTitle:[NSString stringWithFormat:@"%@ %@ - %@", section.subject, section.catalogNumber, section.section] action:nil keyEquivalent:@""];
             itm.submenu = submenu;
-        }
+        }// End of for
+        
+        if ([userSections count] == 0)
+        {
+            [menu addItemWithTitle:@"Add courses in preferences..." action:@selector(showPreferences:) keyEquivalent:@""];
+        }// End of if
         
         coursesMenuItem.title = @"Courses";
     }// End of else
