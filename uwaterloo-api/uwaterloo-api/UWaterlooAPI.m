@@ -88,5 +88,23 @@
     }];
 }// End of courses
 
+-(void)sectionsForSubjectCode:(NSString *)subjectCode catalogNumber:(NSString *)catalogNumber withTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector
+{
+    [[self createRequest] performRequest:[NSString stringWithFormat:@"courses/%@/%@/schedule.json", subjectCode, catalogNumber] withOptions:nil successBlock:^(NSDictionary *data){
+        
+        NSMutableArray *msections = [[NSMutableArray alloc] init];
+        for (NSDictionary *json_section in data)
+        {
+            [msections addObject:[[Section alloc] initWithDictionary:json_section]];
+        }// End of for
+        
+        if (successSelector != nil && [target respondsToSelector:successSelector])
+            [target performSelector:successSelector withObject:[[NSArray alloc] initWithArray:msections]];
+    } andFailureBlock:^(NSError *error){
+        if (failureSelector != nil && [target respondsToSelector:failureSelector])
+            [target performSelector:failureSelector withObject:error];
+    }];
+}// End of courses
+
 
 @end

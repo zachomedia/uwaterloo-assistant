@@ -10,10 +10,9 @@
 
 #import "AddCourseWindowController.h"
 
-#import "AppDelegate.h"
+#import "DataPersistance.h"
 
 #import <uwaterloo-api/UWaterlooAPI.h>
-#import <uwaterloo-api/Subjects.h>
 
 @interface CoursesPreferencesViewController ()
 
@@ -21,7 +20,7 @@
 
 @implementation CoursesPreferencesViewController
 {
-    NSMutableArray *selectedCourses;
+    NSMutableArray *selectedSections;
     
     AddCourseWindowController *addCourseWindowController;
 }
@@ -32,7 +31,7 @@
     
     if (self)
     {
-        selectedCourses = [[NSMutableArray alloc] init];
+        selectedSections = [[NSMutableArray alloc] initWithArray:[DataPersistance userSections]];
     }// End of if
     
     return self;
@@ -52,7 +51,9 @@
 
 -(void)savePreferences
 {
-    Log(@"NOT IMPLEMENTED: Save Courses Preferences");
+    Log(@"Saving Courses Preferences...");
+    
+    [DataPersistance setUserSections:selectedSections];
 }// End of savePreferences
 
 - (IBAction)addCourse:(id)sender
@@ -63,18 +64,19 @@
     {
         if (returnCode == NSModalResponseOK)
         {
-            [selectedCourses addObject:addCourseWindowController.selectedCourse];
+            [selectedSections addObject:addCourseWindowController.selectedSection];
             [self.selectedCoursesTableview reloadData];
         }// End of if
         
         addCourseWindowController = nil;
+        [self savePreferences];
     }];
 }// End of addCourse
 
 - (IBAction)removeCourse:(id)sender
 {
     NSIndexSet *selected = [self.selectedCoursesTableview selectedRowIndexes];
-    [selectedCourses removeObjectsAtIndexes:selected];
+    [selectedSections removeObjectsAtIndexes:selected];
     
     [self.selectedCoursesTableview reloadData];
     [self.removeCourseButton setEnabled:NO];
@@ -82,8 +84,8 @@
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    Log(@"Number of Rows: %zd", [selectedCourses count]);
-    return [selectedCourses count];
+    Log(@"Number of Rows: %zd", [selectedSections count]);
+    return [selectedSections count];
 }// End of numberOfRowsInTableView
 
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -101,19 +103,19 @@
         [field setBackgroundColor:[NSColor colorWithWhite:1.0 alpha:0.0]];
     }// End of if
 
-    Course *course = (Course *)[selectedCourses objectAtIndex:row];
+    Section *section = (Section *)[selectedSections objectAtIndex:row];
     
     if (tableColumn == self.courseCodeColumn)
     {
-        field.stringValue = [NSString stringWithFormat:@"%@ %@", course.subject, course.catalogNumber];
+        field.stringValue = [NSString stringWithFormat:@"%@ %@", section.subject, section.catalogNumber];
     }
     else if (tableColumn == self.courseNameColumn)
     {
-        field.stringValue = course.title;
+        field.stringValue = section.title;
     }
     else if (tableColumn == self.sectionColumn)
     {
-        field.stringValue = @"Not Implemented";
+        field.stringValue = section.section;
     }
     
     return field;

@@ -12,6 +12,7 @@
 #import "Weather.h"
 #import "Subjects.h"
 #import "Course.h"
+#import "Section.h"
 
 @interface UWaterlooAPI : NSObject
 
@@ -25,5 +26,7 @@
 -(void)subjectsWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
 
 -(void)coursesForSubjectCode:(NSString *)subjectCode withTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
+
+-(void)sectionsForSubjectCode:(NSString *)subjectCode catalogNumber:(NSString *)catalogNumber withTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
 
 @end

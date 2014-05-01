@@ -17,6 +17,7 @@
 		B60A13241911A31A00AA4DC9 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A13221911A31A00AA4DC9 /* AboutView.xib */; };
 		B60A133B1911CBCA00AA4DC9 /* AddCourseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */; };
 		B60A133C1911CBCA00AA4DC9 /* AddCourseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */; };
+		B60A13431912038500AA4DC9 /* DataPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13421912038500AA4DC9 /* DataPersistance.m */; };
 		B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BBE191152A40034B196 /* uwaterloo-api.framework */; };
 		B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF451910BFF4004030F6 /* Cocoa.framework */; };
 		B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF4E1910BFF4004030F6 /* InfoPlist.strings */; };
@@ -73,6 +74,8 @@
 		B60A13381911CBCA00AA4DC9 /* AddCourseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseWindowController.h; sourceTree = "<group>"; };
 		B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseWindowController.m; sourceTree = "<group>"; };
 		B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCourseWindow.xib; sourceTree = "<group>"; };
+		B60A13411912038500AA4DC9 /* DataPersistance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPersistance.h; sourceTree = "<group>"; };
+		B60A13421912038500AA4DC9 /* DataPersistance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPersistance.m; sourceTree = "<group>"; };
 		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
 		B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uWaterloo Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -213,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				B60A12FD19116EA600AA4DC9 /* APIKey.h */,
+				B60A13411912038500AA4DC9 /* DataPersistance.h */,
+				B60A13421912038500AA4DC9 /* DataPersistance.m */,
 				B650BF791910C04D004030F6 /* AppDelegate.h */,
 				B650BF7A1910C04D004030F6 /* AppDelegate.m */,
 				B650BF5A1910BFF4004030F6 /* MainMenu.xib */,
@@ -390,6 +395,7 @@
 				B650BF861910C04D004030F6 /* AppDelegate.m in Sources */,
 				B60A130919117B7600AA4DC9 /* PreferencesWindowController.m in Sources */,
 				B650BF521910BFF4004030F6 /* main.m in Sources */,
+				B60A13431912038500AA4DC9 /* DataPersistance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

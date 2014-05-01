@@ -8,15 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import <uwaterloo-api/Course.h>
+#import <uwaterloo-api/Section.h>
 
 @interface AddCourseWindowController : NSWindowController
 
 @property (weak) IBOutlet NSPopUpButton *subjectDropdown;
 @property (weak) IBOutlet NSPopUpButton *courseDropdown;
+@property (weak) IBOutlet NSPopUpButton *sectionDropdown;
 @property (weak) IBOutlet NSButton *addCourseButton;
 
-@property (nonatomic, strong) Course *selectedCourse;
+@property (nonatomic, strong) Section *selectedSection;
 
 - (id)initWithWindowNibName:(NSString *)windowNibName;
 
@@ -25,4 +26,5 @@
 
 - (IBAction)subjectSelected:(id)sender;
 - (IBAction)courseSelected:(id)sender;
+- (IBAction)sectionSeleted:(id)sender;
 @end

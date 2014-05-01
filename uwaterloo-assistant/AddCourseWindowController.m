@@ -21,6 +21,7 @@
     
     NSArray *subjects;
     NSArray *courses;
+    NSArray *sections;
 }
 
 - (id)initWithWindow:(NSWindow *)window
@@ -60,6 +61,10 @@
     [self.courseDropdown addItemWithTitle:@""];
     [self.courseDropdown setEnabled:NO];
     
+    [self.sectionDropdown removeAllItems];
+    [self.sectionDropdown addItemWithTitle:@""];
+    [self.sectionDropdown setEnabled:NO];
+    
     [self.addCourseButton setEnabled:NO];
     
     // Load available subjects
@@ -95,12 +100,23 @@
 
 - (IBAction)subjectSelected:(id)sender
 {
+    NSInteger index = [self.subjectDropdown indexOfSelectedItem] - 1;
+    
+    if (index < 0)
+    {
+        // Load courses for subject
+        [self.courseDropdown removeAllItems];
+        [self.courseDropdown addItemWithTitle:@""];
+        [self.courseDropdown setEnabled:NO];
+        
+        return;
+    }
+    
     // Load courses for subject
     [self.courseDropdown removeAllItems];
     [self.courseDropdown addItemWithTitle:@"Loading courses..."];
     [self.courseDropdown setEnabled:NO];
     
-    NSInteger index = [self.subjectDropdown indexOfSelectedItem] - 1;
     Subject *subject = (Subject *)[subjects objectAtIndex:index];
     
     [api coursesForSubjectCode:subject.code withTarget:self successSelector:@selector(coursesLoaded:) andFailureSelector:@selector(loadError:)];
@@ -123,8 +139,46 @@
 
 - (IBAction)courseSelected:(id)sender
 {
-    [self.addCourseButton setEnabled:YES];
+    NSInteger index = [self.courseDropdown indexOfSelectedItem] - 1;
+    
+    if (index < 0)
+    {
+        [self.sectionDropdown removeAllItems];
+        [self.sectionDropdown addItemWithTitle:@""];
+        [self.sectionDropdown setEnabled:NO];
+        return;
+    }
+    
+    // Load sections
+    [self.sectionDropdown removeAllItems];
+    [self.sectionDropdown addItemWithTitle:@"Loading sections..."];
+    [self.sectionDropdown setEnabled:NO];
+    
+    Course *course = (Course *)[courses objectAtIndex:index];
+    
+    [api sectionsForSubjectCode:course.subject catalogNumber:course.catalogNumber withTarget:self successSelector:@selector(sectionsLoaded:) andFailureSelector:@selector(loadError:)];
 }// End of courseSelected
+
+-(void)sectionsLoaded:(NSArray *)in_sections
+{
+    sections = in_sections;
+    
+    [self.sectionDropdown removeAllItems];
+    [self.sectionDropdown addItemWithTitle:@"Select a section..."];
+    
+    for (Section *section in sections)
+    {
+        [self.sectionDropdown addItemWithTitle:[NSString stringWithFormat:@"%@", section.section]];
+    }// End of for
+    
+    [self.sectionDropdown setEnabled:YES];
+}// End of sectionsLoaded
+
+- (IBAction)sectionSeleted:(id)sender
+{
+    NSInteger index = [self.sectionDropdown indexOfSelectedItem] - 1;
+    [self.addCourseButton setEnabled:(index >= 0)];
+}// End of sectionSelected
 
 - (IBAction)cancel:(id)sender
 {
@@ -133,8 +187,8 @@
 
 - (IBAction)addCourse:(id)sender
 {
-    NSInteger index = [self.courseDropdown indexOfSelectedItem] - 1;
-    self.selectedCourse = (Course *)[courses objectAtIndex:index];
+    NSInteger index = [self.sectionDropdown indexOfSelectedItem] - 1;
+    self.selectedSection = (Section *)[sections objectAtIndex:index];
     
     [self.window.sheetParent endSheet:self.window returnCode:NSModalResponseOK];
 }// End of addCourse

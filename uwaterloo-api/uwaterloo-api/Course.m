@@ -37,4 +37,33 @@
     return self;
 }// End of initWithDictionary
 
+-(id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init])
+    {
+        self.id = [decoder decodeObjectForKey:@"id"];
+        self.subject = [decoder decodeObjectForKey:@"subject"];
+        self.catalogNumber = [decoder decodeObjectForKey:@"catalogNumber"];
+        self.title = [decoder decodeObjectForKey:@"title"];
+        self.units = [decoder decodeObjectForKey:@"units"];
+        self.description = [decoder decodeObjectForKey:@"description"];
+        self.academicLevel = [decoder decodeIntegerForKey:@"academicLevel"];
+        
+        Log(@"Decoding Complete");
+    }// End of if
+    
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.id forKey:@"id"];
+    [coder encodeObject:self.subject forKey:@"subject"];
+    [coder encodeObject:self.catalogNumber forKey:@"catalogNumber"];
+    [coder encodeObject:self.title forKey:@"title"];
+    [coder encodeObject:self.units forKey:@"units"];
+    [coder encodeObject:self.description forKey:@"description"];
+    [coder encodeInteger:self.academicLevel forKey:@"academicLevel"];
+}
+
 @end

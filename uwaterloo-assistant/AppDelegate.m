@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "APIKey.h"
+#import "DataPersistance.h"
 
 @implementation AppDelegate
 {
@@ -21,6 +22,8 @@
     NSTimer *shortRefreshTimer;
     NSTimer *longRefreshTimer;
     
+    NSArray *userSections;
+    
     PreferencesWindowController *preferencesWindowController;
 }
 
@@ -30,6 +33,9 @@
     
     // Hide the Dock icon
     [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
+    
+    // Load stored data
+    userSections = [DataPersistance userSections];
     
     // Initalize the API
     self.api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY];

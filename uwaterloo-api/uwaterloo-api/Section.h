@@ -1,26 +1,23 @@
 //
-//  Course.h
+//  Section.h
 //  uwaterloo-api
 //
-//  Created by Zachary Seguin on 2014-04-30.
+//  Created by Zachary Seguin on 2014-05-01.
 //  Copyright (c) 2014 Zachary Seguin. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-typedef enum { AcademicLevelUndergraduate, AcademicLevelGraduate } AcademicLevel;
+@interface Section : NSObject
 
-@interface Course : NSObject <NSCoding>
-
-@property (nonatomic, strong) NSString *id;
 @property (nonatomic, strong) NSString *subject;
 @property (nonatomic, strong) NSString *catalogNumber;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSNumber *units;
-@property (nonatomic, strong) NSString *description;
-@property AcademicLevel academicLevel;
+
+@property (nonatomic, strong) NSString *section;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
 -(id)initWithCoder:(NSCoder *)decoder;
+-(void)encodeWithCoder:(NSCoder *)coder;
 
 @end

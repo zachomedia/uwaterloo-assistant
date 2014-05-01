@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="addCourseButton" destination="YOH-yB-5zp" id="Oah-47-fzs"/>
                 <outlet property="courseDropdown" destination="Ouf-KV-kzo" id="Fwj-C8-tD1"/>
+                <outlet property="sectionDropdown" destination="7Ti-gd-0QN" id="6Ce-eN-4rm"/>
                 <outlet property="subjectDropdown" destination="Ch5-FM-d27" id="1cv-hg-grF"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -17,14 +18,14 @@
         <window title="Add Course" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="480" height="178"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="240"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="178"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="240"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOH-yB-5zp">
-                        <rect key="frame" x="352" y="10" width="114" height="32"/>
+                        <rect key="frame" x="352" y="13" width="114" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Add Course" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bsU-iA-8uG">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -35,7 +36,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3iu-Wa-haC">
-                        <rect key="frame" x="14" y="10" width="82" height="32"/>
+                        <rect key="frame" x="14" y="13" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ob6-zL-zH1">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -49,7 +50,7 @@ Gw
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6B-lN-Q00">
-                        <rect key="frame" x="20" y="141" width="50" height="17"/>
+                        <rect key="frame" x="20" y="203" width="50" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Subject" id="xuU-Jc-hzp">
                             <font key="font" metaFont="system"/>
@@ -58,7 +59,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ch5-FM-d27">
-                        <rect key="frame" x="18" y="109" width="445" height="26"/>
+                        <rect key="frame" x="18" y="171" width="445" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Select a subject..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="nLg-zT-5Wm" id="N4i-ZN-Xi3">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -74,7 +75,7 @@ Gw
                         </connections>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KUL-Qp-aGU">
-                        <rect key="frame" x="20" y="87" width="48" height="17"/>
+                        <rect key="frame" x="20" y="149" width="48" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Course" id="2VY-eX-ggz">
                             <font key="font" metaFont="system"/>
@@ -83,7 +84,7 @@ Gw
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ouf-KV-kzo">
-                        <rect key="frame" x="18" y="55" width="445" height="26"/>
+                        <rect key="frame" x="18" y="117" width="445" height="26"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <popUpButtonCell key="cell" type="push" title="Select a course..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Dc8-9j-E4c" id="EGV-4g-3qa">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -96,6 +97,31 @@ Gw
                         </popUpButtonCell>
                         <connections>
                             <action selector="courseSelected:" target="-2" id="x7t-kH-GGE"/>
+                        </connections>
+                    </popUpButton>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCi-eD-wxL">
+                        <rect key="frame" x="20" y="95" width="50" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Section" id="6fH-mR-hWg">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ti-gd-0QN">
+                        <rect key="frame" x="18" y="63" width="445" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Select a section..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="3N9-jU-dC1" id="HIz-7T-fPk">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" title="OtherViews" id="t9L-Qd-a5r">
+                                <items>
+                                    <menuItem title="Select a section..." state="on" id="3N9-jU-dC1"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="sectionSeleted:" target="-2" id="9tW-AE-igv"/>
                         </connections>
                     </popUpButton>
                 </subviews>
