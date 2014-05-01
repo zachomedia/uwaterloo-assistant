@@ -18,6 +18,7 @@
     
     NSMenuItem *termMenuItem;
     NSMenuItem *weatherMenuItem;
+    NSMenuItem *coursesMenuItem;
     
     NSTimer *shortRefreshTimer;
     NSTimer *longRefreshTimer;
@@ -47,8 +48,6 @@
     
     [self requestAPIData];
     [self createMenu];
-    
-    [self showPreferences:self];
 }// End of applicationDidFinishLaunching
 
 -(void)shortRefreshTimerTick
@@ -129,6 +128,9 @@
     
     // Create menu items
     termMenuItem = [menu addItemWithTitle:@"Loading term information..." action:nil keyEquivalent:@""];
+    
+    coursesMenuItem = [menu addItemWithTitle:@"Loading courses..." action:nil keyEquivalent:@""];
+    [self updateCoursesMenuItem]; // TEMP
     
     [menu addItem:[NSMenuItem separatorItem]];
     
@@ -213,5 +215,43 @@
         weatherMenuItem.title = @"Weather";
     }// End of else
 }// End of updateWeatherMenuItem
+
+-(void)updateCoursesMenuItem
+{
+    Log(@"Updating courses menu item");
+    
+    if (userSections == nil)
+    {
+        coursesMenuItem.title = @"Courses Information Unavailable";
+        [coursesMenuItem.submenu removeAllItems];
+    }// End of if
+    else
+    {
+        NSMenu *menu = coursesMenuItem.submenu;
+        if (menu == nil)
+        {
+            menu = [[NSMenu alloc] init];
+            coursesMenuItem.submenu = menu;
+        }// End of if
+        [menu removeAllItems];
+        
+        for (Section *section in userSections)
+        {
+            NSMenu *submenu = [[NSMenu alloc] init];
+            
+            [submenu addItemWithTitle:[NSString stringWithFormat:@"%@ %@ - %@", section.subject, section.catalogNumber, section.section] action:nil keyEquivalent:@""];
+            [submenu addItemWithTitle:section.title action:nil keyEquivalent:@""];
+            
+            [submenu addItem:[NSMenuItem separatorItem]];
+            
+            [submenu addItemWithTitle:@"Schedule Information Coming Soon" action:nil keyEquivalent:@""];
+            
+            NSMenuItem *itm = [menu addItemWithTitle:[NSString stringWithFormat:@"%@ %@ - %@", section.subject, section.catalogNumber, section.section] action:nil keyEquivalent:@""];
+            itm.submenu = submenu;
+        }
+        
+        coursesMenuItem.title = @"Courses";
+    }// End of else
+}// End of updateCoursesMenuItem
 
 @end
