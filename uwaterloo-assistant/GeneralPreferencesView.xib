@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferencesViewController">
             <connections>
+                <outlet property="startAtLoginCheckbox" destination="fha-0n-f9k" id="x3x-uy-CxH"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -15,17 +16,29 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sqC-BR-qnI">
-                    <rect key="frame" x="96" y="119" width="306" height="34"/>
+                <box autoresizesSubviews="NO" fixedFrame="YES" title="Application Behaviour" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="8lP-fP-2NG">
+                    <rect key="frame" x="17" y="183" width="446" height="69"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" id="AVD-4a-an7">
-                        <font key="font" metaFont="system"/>
-                        <string key="title">No general preferences at this time.
-Set your courses under the Courses tab.</string>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                    <view key="contentView">
+                        <rect key="frame" x="1" y="1" width="444" height="53"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fha-0n-f9k">
+                                <rect key="frame" x="16" y="19" width="104" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="O3E-1w-3RU">
+                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleStartAtLogin:" target="-2" id="m6M-UY-b2A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </box>
             </subviews>
         </customView>
     </objects>

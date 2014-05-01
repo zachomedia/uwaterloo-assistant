@@ -12,5 +12,7 @@
 
 +(NSArray *)userSections;
 +(void)setUserSections:(NSArray *)sections;
++(BOOL)startAtLogin;
++(void)setStartAtLogin:(BOOL)startAtLogin;
 
 @end

@@ -485,6 +485,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
 				INFOPLIST_FILE = "uwaterloo-api/uwaterloo-api-Info.plist";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};
@@ -500,6 +501,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "uwaterloo-api/uwaterloo-api-Prefix.pch";
 				INFOPLIST_FILE = "uwaterloo-api/uwaterloo-api-Info.plist";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = framework;
 			};

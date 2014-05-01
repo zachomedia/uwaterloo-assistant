@@ -18,7 +18,7 @@
 		B60A133B1911CBCA00AA4DC9 /* AddCourseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */; };
 		B60A133C1911CBCA00AA4DC9 /* AddCourseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */; };
 		B60A13431912038500AA4DC9 /* DataPersistance.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13421912038500AA4DC9 /* DataPersistance.m */; };
-		B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BBE191152A40034B196 /* uwaterloo-api.framework */; };
+		B63DC81F1912FFF00023BE0C /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BBE191152A40034B196 /* uwaterloo-api.framework */; };
 		B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF451910BFF4004030F6 /* Cocoa.framework */; };
 		B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF4E1910BFF4004030F6 /* InfoPlist.strings */; };
 		B650BF521910BFF4004030F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B650BF511910BFF4004030F6 /* main.m */; };
@@ -46,6 +46,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = B6366BA1191152A30034B196;
 			remoteInfo = "uwaterloo-apiTests";
+		};
+		B63DC81C1912FF800023BE0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B6366B89191152A30034B196;
+			remoteInfo = "uwaterloo-api";
 		};
 		B650BF671910BFF4004030F6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -104,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */,
+				B63DC81F1912FFF00023BE0C /* uwaterloo-api.framework in Frameworks */,
 				B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +285,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B63DC81D1912FF800023BE0C /* PBXTargetDependency */,
 			);
 			name = "uWaterloo Assistant";
 			productName = "uwaterloo-assistant";
@@ -314,7 +322,7 @@
 					B650BF411910BFF4004030F6 = {
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -419,6 +427,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B63DC81D1912FF800023BE0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "uwaterloo-api";
+			targetProxy = B63DC81C1912FF800023BE0C /* PBXContainerItemProxy */;
+		};
 		B650BF681910BFF4004030F6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B650BF411910BFF4004030F6 /* uWaterloo Assistant */;
@@ -536,7 +549,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "uWaterloo Assistant.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -551,7 +563,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "uWaterloo Assistant.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

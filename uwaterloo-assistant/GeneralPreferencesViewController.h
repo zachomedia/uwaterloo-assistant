@@ -12,4 +12,8 @@
 
 @interface GeneralPreferencesViewController : NSViewController<PreferencesModifier>
 
+@property (weak) IBOutlet NSButton *startAtLoginCheckbox;
+
+- (IBAction)toggleStartAtLogin:(id)sender;
+
 @end
