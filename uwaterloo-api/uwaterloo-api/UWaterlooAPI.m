@@ -14,21 +14,19 @@
 {
     NSString *apiKey;
     NSURL *baseUrl;
-    id delegate;
 }
 
--(id)initWithAPIKey:(NSString *)key andDelegate:(id)del
+-(id)initWithAPIKey:(NSString *)key
 {
-    return [self initWithAPIKey:key baseURL:[NSURL URLWithString:@"https://api.uwaterloo.ca/v2/"] andDelegate:del];
-}// End of initWithAPIKey method
+    return [self initWithAPIKey:key andBaseURL:[NSURL URLWithString:@"https://api.uwaterloo.ca/v2/"]];
+}
 
--(id)initWithAPIKey:(NSString *)key baseURL:(NSURL *)url andDelegate:(id)del
+-(id)initWithAPIKey:(NSString *)key andBaseURL:(NSURL *)url
 {
     if (self = [super init])
     {
         apiKey = key;
         baseUrl = url;
-        delegate = del;
     }// End of if
     
     return self;
@@ -39,27 +37,56 @@
     return [[UWaterlooAPIRequest alloc] initWithAPIKey:apiKey andBaseURL:baseUrl];
 }
 
--(void)termsWithSuccessSelector:(SEL)successSelector failureSelector:(SEL)failureSelector
+-(void)termsWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector
 {
     [[self createRequest] performRequest:@"terms/list.json" withOptions:nil successBlock:^(NSDictionary *data){
-        if (successSelector != nil && [delegate respondsToSelector:successSelector])
-            [delegate performSelector:successSelector withObject:[[Terms alloc] initWithDictionary:data]];
+        if (successSelector != nil && [target respondsToSelector:successSelector])
+            [target performSelector:successSelector withObject:[[Terms alloc] initWithDictionary:data]];
     } andFailureBlock:^(NSError *error){
-        if (failureSelector != nil && [delegate respondsToSelector:failureSelector])
-            [delegate performSelector:failureSelector withObject:error];
+        if (failureSelector != nil && [target respondsToSelector:failureSelector])
+            [target performSelector:failureSelector withObject:error];
     }];
 }// End of terms
 
--(void)weatherWithSuccessSelector:(SEL)successSelector failureSelector:(SEL)failureSelector
+-(void)weatherWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector
 {
     [[self createRequest] performRequest:@"weather/current.json" withOptions:nil successBlock:^(NSDictionary *data){
-        if (successSelector != nil && [delegate respondsToSelector:successSelector])
-            [delegate performSelector:successSelector withObject:[[Weather alloc] initWithDictionary:data]];
+        if (successSelector != nil && [target respondsToSelector:successSelector])
+            [target performSelector:successSelector withObject:[[Weather alloc] initWithDictionary:data]];
     } andFailureBlock:^(NSError *error){
-        if (failureSelector != nil && [delegate respondsToSelector:failureSelector])
-            [delegate performSelector:failureSelector withObject:error];
+        if (failureSelector != nil && [target respondsToSelector:failureSelector])
+            [target performSelector:failureSelector withObject:error];
     }];
 }// End of weather
+
+-(void)subjectsWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector
+{
+    [[self createRequest] performRequest:@"codes/subjects.json" withOptions:nil successBlock:^(NSDictionary *data){
+        if (successSelector != nil && [target respondsToSelector:successSelector])
+            [target performSelector:successSelector withObject:[[Subjects alloc] initWithDictionary:data]];
+    } andFailureBlock:^(NSError *error){
+        if (failureSelector != nil && [target respondsToSelector:failureSelector])
+            [target performSelector:failureSelector withObject:error];
+    }];
+}// End of subjects
+
+-(void)coursesForSubjectCode:(NSString *)subjectCode withTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector
+{
+    [[self createRequest] performRequest:[NSString stringWithFormat:@"courses/%@.json", subjectCode] withOptions:nil successBlock:^(NSDictionary *data){
+        
+        NSMutableArray *mcourses = [[NSMutableArray alloc] init];
+        for (NSDictionary *json_course in data)
+        {
+            [mcourses addObject:[[Course alloc] initWithDictionary:json_course]];
+        }// End of for
+        
+        if (successSelector != nil && [target respondsToSelector:successSelector])
+            [target performSelector:successSelector withObject:[[NSArray alloc] initWithArray:mcourses]];
+    } andFailureBlock:^(NSError *error){
+        if (failureSelector != nil && [target respondsToSelector:failureSelector])
+            [target performSelector:failureSelector withObject:error];
+    }];
+}// End of courses
 
 
 @end

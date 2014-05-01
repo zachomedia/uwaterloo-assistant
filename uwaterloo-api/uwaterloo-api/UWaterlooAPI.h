@@ -10,14 +10,20 @@
 
 #import "Terms.h"
 #import "Weather.h"
+#import "Subjects.h"
+#import "Course.h"
 
 @interface UWaterlooAPI : NSObject
 
--(id)initWithAPIKey:(NSString *)key andDelegate:(id)delegate;
--(id)initWithAPIKey:(NSString *)key baseURL:(NSURL *)url andDelegate:(id)delegate;
+-(id)initWithAPIKey:(NSString *)key;
+-(id)initWithAPIKey:(NSString *)key andBaseURL:(NSURL *)url;
 
--(void)termsWithSuccessSelector:(SEL)successSelector failureSelector:(SEL)failureSelector;
+-(void)termsWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
 
--(void)weatherWithSuccessSelector:(SEL)successSelector failureSelector:(SEL)failureSelector;
+-(void)weatherWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
+
+-(void)subjectsWithTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
+
+-(void)coursesForSubjectCode:(NSString *)subjectCode withTarget:(id)target successSelector:(SEL)successSelector andFailureSelector:(SEL)failureSelector;
 
 @end

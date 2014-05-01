@@ -10,6 +10,17 @@
 
 #import "PreferencesModifier.h"
 
-@interface CoursesPreferencesViewController : NSViewController<PreferencesModifier>
+@interface CoursesPreferencesViewController : NSViewController<PreferencesModifier,  NSTableViewDataSource, NSTableViewDelegate>
+
+@property (weak) IBOutlet NSTableView *selectedCoursesTableview;
+@property (weak) IBOutlet NSTableColumn *courseCodeColumn;
+@property (weak) IBOutlet NSTableColumn *courseNameColumn;
+@property (weak) IBOutlet NSTableColumn *sectionColumn;
+
+@property (weak) IBOutlet NSButton *addCourseButton;
+@property (weak) IBOutlet NSButton *removeCourseButton;
+
+- (IBAction)addCourse:(id)sender;
+- (IBAction)removeCourse:(id)sender;
 
 @end

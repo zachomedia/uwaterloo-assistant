@@ -15,6 +15,8 @@
 		B60A131E19118A2600AA4DC9 /* CoursesPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A131C19118A2600AA4DC9 /* CoursesPreferencesView.xib */; };
 		B60A13231911A31A00AA4DC9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13211911A31A00AA4DC9 /* AboutViewController.m */; };
 		B60A13241911A31A00AA4DC9 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A13221911A31A00AA4DC9 /* AboutView.xib */; };
+		B60A133B1911CBCA00AA4DC9 /* AddCourseWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */; };
+		B60A133C1911CBCA00AA4DC9 /* AddCourseWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */; };
 		B6366BD5191153770034B196 /* uwaterloo-api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6366BBE191152A40034B196 /* uwaterloo-api.framework */; };
 		B650BF461910BFF4004030F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B650BF451910BFF4004030F6 /* Cocoa.framework */; };
 		B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B650BF4E1910BFF4004030F6 /* InfoPlist.strings */; };
@@ -68,6 +70,9 @@
 		B60A13201911A31A00AA4DC9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		B60A13211911A31A00AA4DC9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		B60A13221911A31A00AA4DC9 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
+		B60A13381911CBCA00AA4DC9 /* AddCourseWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCourseWindowController.h; sourceTree = "<group>"; };
+		B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCourseWindowController.m; sourceTree = "<group>"; };
+		B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCourseWindow.xib; sourceTree = "<group>"; };
 		B6366BB8191152A30034B196 /* uwaterloo-api.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "uwaterloo-api.xcodeproj"; path = "uwaterloo-api/uwaterloo-api.xcodeproj"; sourceTree = "<group>"; };
 		B650BF421910BFF4004030F6 /* uWaterloo Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uWaterloo Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B650BF451910BFF4004030F6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -115,17 +120,44 @@
 		B60A13121911874B00AA4DC9 /* Preference Views */ = {
 			isa = PBXGroup;
 			children = (
-				B60A1315191188DA00AA4DC9 /* GeneralPreferencesViewController.h */,
-				B60A1316191188DA00AA4DC9 /* GeneralPreferencesViewController.m */,
-				B60A1317191188DA00AA4DC9 /* GeneralPreferencesView.xib */,
+				B60A132E1911C6A900AA4DC9 /* General */,
+				B60A132D1911C6A200AA4DC9 /* Courses */,
+				B60A132F1911C6AF00AA4DC9 /* About */,
+			);
+			name = "Preference Views";
+			sourceTree = "<group>";
+		};
+		B60A132D1911C6A200AA4DC9 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
 				B60A131A19118A2600AA4DC9 /* CoursesPreferencesViewController.h */,
 				B60A131B19118A2600AA4DC9 /* CoursesPreferencesViewController.m */,
 				B60A131C19118A2600AA4DC9 /* CoursesPreferencesView.xib */,
+				B60A13381911CBCA00AA4DC9 /* AddCourseWindowController.h */,
+				B60A13391911CBCA00AA4DC9 /* AddCourseWindowController.m */,
+				B60A133A1911CBCA00AA4DC9 /* AddCourseWindow.xib */,
+			);
+			name = Courses;
+			sourceTree = "<group>";
+		};
+		B60A132E1911C6A900AA4DC9 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B60A1315191188DA00AA4DC9 /* GeneralPreferencesViewController.h */,
+				B60A1316191188DA00AA4DC9 /* GeneralPreferencesViewController.m */,
+				B60A1317191188DA00AA4DC9 /* GeneralPreferencesView.xib */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		B60A132F1911C6AF00AA4DC9 /* About */ = {
+			isa = PBXGroup;
+			children = (
 				B60A13201911A31A00AA4DC9 /* AboutViewController.h */,
 				B60A13211911A31A00AA4DC9 /* AboutViewController.m */,
 				B60A13221911A31A00AA4DC9 /* AboutView.xib */,
 			);
-			name = "Preference Views";
+			name = About;
 			sourceTree = "<group>";
 		};
 		B6366BB9191152A30034B196 /* Products */ = {
@@ -185,12 +217,12 @@
 				B650BF7A1910C04D004030F6 /* AppDelegate.m */,
 				B650BF5A1910BFF4004030F6 /* MainMenu.xib */,
 				B650BF5D1910BFF4004030F6 /* Images.xcassets */,
-				B650BF4C1910BFF4004030F6 /* Supporting Files */,
+				B60A131F191191B300AA4DC9 /* PreferencesModifier.h */,
 				B60A130619117B7600AA4DC9 /* PreferencesWindowController.h */,
 				B60A130719117B7600AA4DC9 /* PreferencesWindowController.m */,
 				B60A130819117B7600AA4DC9 /* PreferencesWindow.xib */,
 				B60A13121911874B00AA4DC9 /* Preference Views */,
-				B60A131F191191B300AA4DC9 /* PreferencesModifier.h */,
+				B650BF4C1910BFF4004030F6 /* Supporting Files */,
 			);
 			path = "uwaterloo-assistant";
 			sourceTree = "<group>";
@@ -325,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B60A1319191188DA00AA4DC9 /* GeneralPreferencesView.xib in Resources */,
+				B60A133C1911CBCA00AA4DC9 /* AddCourseWindow.xib in Resources */,
 				B650BF501910BFF4004030F6 /* InfoPlist.strings in Resources */,
 				B60A13241911A31A00AA4DC9 /* AboutView.xib in Resources */,
 				B650BF5E1910BFF4004030F6 /* Images.xcassets in Resources */,
@@ -353,6 +386,7 @@
 				B60A13231911A31A00AA4DC9 /* AboutViewController.m in Sources */,
 				B60A131D19118A2600AA4DC9 /* CoursesPreferencesViewController.m in Sources */,
 				B60A1318191188DA00AA4DC9 /* GeneralPreferencesViewController.m in Sources */,
+				B60A133B1911CBCA00AA4DC9 /* AddCourseWindowController.m in Sources */,
 				B650BF861910C04D004030F6 /* AppDelegate.m in Sources */,
 				B60A130919117B7600AA4DC9 /* PreferencesWindowController.m in Sources */,
 				B650BF521910BFF4004030F6 /* main.m in Sources */,

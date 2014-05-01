@@ -12,8 +12,6 @@
 
 @implementation AppDelegate
 {
-    UWaterlooAPI *api;
-    
     Terms *terms;
     Weather *weather;
     
@@ -34,7 +32,7 @@
     [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
     
     // Initalize the API
-    api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY andDelegate:self];
+    self.api = [[UWaterlooAPI alloc] initWithAPIKey:API_KEY];
     
     // Setup update timers
     shortRefreshTimer = [NSTimer scheduledTimerWithTimeInterval:(30 * 60) target:self selector:@selector(shortRefreshTimerTick) userInfo:nil repeats:YES];
@@ -43,18 +41,20 @@
     
     [self requestAPIData];
     [self createMenu];
+    
+    [self showPreferences:self];
 }// End of applicationDidFinishLaunching
 
 -(void)shortRefreshTimerTick
 {
     Log(@"Short Refresh Timer Tick");
-    [api weatherWithSuccessSelector:@selector(weatherReceived:) failureSelector:@selector(weatherFailed:)];
+    [self.api weatherWithTarget:self successSelector:@selector(weatherReceived:) andFailureSelector:@selector(weatherFailed:)];
 }// End of shortRefreshTimerTick
 
 -(void)longRefreshTimerTick
 {
     Log(@"Long Refresh Timer Tick");
-    [api termsWithSuccessSelector:@selector(termsReceived:) failureSelector:@selector(termsFailed:)];
+    [self.api termsWithTarget:self successSelector:@selector(termsReceived:) andFailureSelector:@selector(termsFailed:)];
 }// End of longRefreshTimerTick
 
 -(void)requestAPIData
