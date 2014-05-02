@@ -120,6 +120,10 @@
     [self.courseDropdown addItemWithTitle:@"Loading courses..."];
     [self.courseDropdown setEnabled:NO];
     
+    [self.sectionDropdown removeAllItems];
+    [self.sectionDropdown addItemWithTitle:@""];
+    [self.sectionDropdown setEnabled:NO];
+    
     Subject *subject = (Subject *)[subjects objectAtIndex:index];
     
     [api coursesForSubjectCode:subject.code withTarget:self successSelector:@selector(coursesLoaded:) andFailureSelector:@selector(loadError:)];
